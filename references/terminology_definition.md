@@ -26,7 +26,7 @@ In the current manuscript context, likely define:
 - `matrix-vug connectivity (MVC)`;
 - `matrix-vug coupling`;
 - `pore coupling`, if used as a specific process rather than a general phrase;
-- `T2 pathway`, if used as a manuscript-specific interpretation;
+- `T2 pathway`, if used as a manuscript-specific concept. If not, prefer the plainer phrase `time evolution of T2 distributions`;
 - any new metric, index, regime, framework, or named relation introduced by the author.
 
 ## Terms That Usually Do Not Need Definition

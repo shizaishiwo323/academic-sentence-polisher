@@ -43,6 +43,7 @@ If a requested edit depends on technical truth, mechanism, causality, terminolog
 5. Keep technical terms when they are standard in the field.
 6. Do not introduce a new term unless the original text already requires it.
 7. Do not change numbers, variables, citations, equations, labels, figure references, or table references.
+8. Do not make the revised sentence substantially longer than the original unless clarity requires it; by default, keep it within about 110% of the original length.
 
 ## Workflow
 
@@ -110,6 +111,8 @@ Yes / Potential issue: ...
 ```
 
 Keep the explanation short. This skill is for polishing sentences, not reviewing the paper.
+
+Do not provide detailed review comments unless the user asks for explanation. Output the polished sentence or passage first.
 
 ## Reference Loading
 

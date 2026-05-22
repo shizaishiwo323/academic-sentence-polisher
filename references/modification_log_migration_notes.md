@@ -6,22 +6,29 @@ This file defines how material can migrate from the raw log into the `academic-s
 
 ## Current Stage
 
-Stage: Step 2+ material cleaning.
+Stage: Step 4-5 completed; v0.1 rule implementation under review.
 
-Allowed in this stage:
+Active executable files:
 
-- build negative and caution samples;
-- label unsafe revision patterns;
-- extract local draft rule cards;
-- document migration decisions.
+- `SKILL.md`;
+- `references/dash_policy.md`;
+- `references/overclaim_downgrade.md`;
+- `references/simple_word_replacement.md`;
+- `references/terminology_definition.md`.
 
-Not allowed in this stage:
+Supporting test and validation files:
 
-- do not modify `SKILL.md`;
-- do not register the new draft files as active references;
-- do not build a final general rule table;
-- do not run a test set as if the skill is ready;
-- do not treat teacher-level paragraph edits as sentence-polishing examples.
+- `references/test_cases.md`;
+- `references/validation_checklist.md`.
+
+Non-executable traceability files:
+
+- `references/modification_log_migration_notes.md`;
+- `references/negative_samples_from_own_manuscript.md`;
+- `references/own_manuscript_rule_cards_draft.md`;
+- `references/source_sentence_corpus.md`.
+
+The older extended reference files remain available for traceability and future expansion, but the v0.1 skill should not load them by default.
 
 ## Migration Rules
 
@@ -36,23 +43,34 @@ Not allowed in this stage:
 
 | Target file | Role | Current status |
 |---|---|---|
-| `negative_samples_from_own_manuscript.md` | Stores 30-50 negative/caution samples with `Must not learn` guardrails | Created for Step 2+ |
-| `own_manuscript_rule_cards_draft.md` | Stores 8-10 draft local rules from safe patterns | Created for Step 2+ |
+| `SKILL.md` | Defines the sentence-polishing boundary, workflow, output format, and prohibitions | Active v0.1 file |
+| `dash_policy.md` | Controls dash, hyphen, en-dash, and compound-term decisions | Active v0.1 rule table |
+| `overclaim_downgrade.md` | Controls claim-strength downgrading and prevents overclaiming | Active v0.1 rule table |
+| `simple_word_replacement.md` | Controls fancy-word replacement and nominalization reduction | Active v0.1 rule table |
+| `terminology_definition.md` | Controls first-use definitions and manuscript-specific terms | Active v0.1 rule table |
+| `negative_samples_from_own_manuscript.md` | Stores negative/caution samples with `Must not learn` guardrails | Traceability and future expansion |
+| `own_manuscript_rule_cards_draft.md` | Stores draft local rules from safe patterns | Traceability and future expansion |
 | `modification_log_migration_notes.md` | Records how raw log entries may or may not migrate | This file |
 
-## Files Not to Touch in Step 2+
+## Files Not Loaded by Default in v0.1
 
-During Step 2+ material cleaning, do not edit:
+The v0.1 `SKILL.md` should not load the following extended files by default:
 
-- `SKILL.md`
-- `dash_policy.md`
+- `ai_smell_checklist.md`
+- `before_after_examples.md`
+- `corpus_rule_cards.md`
+- `extraction_protocol.md`
+- `negative_samples_from_own_manuscript.md`
 - `overclaim_downgrade_table.md`
+- `own_manuscript_rule_cards_draft.md`
 - `simple_word_replacements.md`
+- `source_sentence_corpus.md`
+- `style_principles.md`
 - `terminology_definition_rules.md`
 - `validation_checklist.md`
 - `test_cases.md`
 
-These files belong to later stages. Step 2+ should only clean and label material from the author's manuscript modification history.
+Load these only when the user explicitly asks to expand, test, audit, or trace the skill. This keeps the active skill narrow and prevents older draft rules from overriding the v0.1 rule tables.
 
 ## Source Group Mapping
 
@@ -79,7 +97,7 @@ Allowed migration:
 
 - `negative_samples_from_own_manuscript.md`: yes;
 - `own_manuscript_rule_cards_draft.md`: yes, with guardrails;
-- `SKILL.md`: no, not in this stage.
+- active v0.1 rule tables: only after manual review and testing.
 
 ### Partial-Learning Samples
 
@@ -171,7 +189,7 @@ A draft rule can be promoted later only if:
 3. it does not require scientific judgment beyond the source text;
 4. it preserves LaTeX, variables, values, citations, and labels;
 5. it passes manual review on new manuscript sentences;
-6. it does not duplicate an existing rule in `style_principles.md`, `dash_policy.md`, or `overclaim_downgrade_table.md`.
+6. it does not duplicate an existing rule in `dash_policy.md`, `overclaim_downgrade.md`, `simple_word_replacement.md`, or `terminology_definition.md`.
 
 ## Rejection Criteria
 
@@ -187,7 +205,7 @@ Reject a migration if it teaches the skill to:
 - turn local simulation evidence into broad claims;
 - copy intermediate-draft text with spelling, grammar, spacing, or LaTeX errors.
 
-## Step 2+ Completion Checklist
+## v0.1 Testing Checklist
 
 - `negative_samples_from_own_manuscript.md` has 30-50 samples.
 - Samples cover overclaim, vague subject, template phrase, heavy nominalization, undefined term, and LaTeX risk.
@@ -197,3 +215,7 @@ Reject a migration if it teaches the skill to:
 - Every sample has a `Must not learn` field.
 - Learnable, partial-learning, and out-of-scope samples are clearly separated.
 - Raw table rows remain traceability material, not executable prompts.
+- Test 10-20 real sentences against the active v0.1 files.
+- Confirm no test output adds facts, mechanisms, citations, or stronger claims.
+- Confirm protected values, variables, labels, and LaTeX are preserved.
+- Confirm revisions use local edits rather than unnecessary paragraph rewriting.

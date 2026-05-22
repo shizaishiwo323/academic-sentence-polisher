@@ -87,3 +87,19 @@ Compared with the low-Da case, the high-Da case shows stronger inlet-localized d
 
 Expected behavior:
 Preserve both compared cases and the direction of contrast.
+
+## TC-11: Dash and character compatibility
+
+Input:
+Matrix–vug connectivity increases across the Péclet–Damköhler parameter space.
+
+Expected behavior:
+Treat `matrix–vug connectivity` and `Péclet–Damköhler` as protected technical expressions. Do not rewrite them only because they use Unicode characters.
+
+## TC-12: Do not over-downgrade
+
+Input:
+Figure 3 demonstrates that the simulated T2 peak shifts to longer relaxation times under the tested conditions.
+
+Expected behavior:
+Do not automatically downgrade `demonstrates` if the figure directly supports the observation. Preserve `under the tested conditions`.

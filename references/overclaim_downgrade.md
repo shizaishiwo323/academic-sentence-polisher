@@ -10,6 +10,8 @@ The skill should preserve the original evidence strength. It should downgrade ex
 
 Before changing a sentence, check whether the original text supports the strength of each claim. If support is missing or local, use weaker wording. If downgrading would change the intended scientific judgment, mark `author-confirm`.
 
+Do not automatically downgrade a strong verb if the original sentence already has direct evidence and the verb is appropriate. First decide whether the problem is overclaiming or merely formal academic wording.
+
 Do not strengthen:
 
 - `suggests` to `demonstrates`;

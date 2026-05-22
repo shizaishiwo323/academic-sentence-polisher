@@ -98,6 +98,22 @@ Keep these only if the manuscript defines them or if the compact form is clearly
 - Use en dashes only if the manuscript or journal style already uses them for ranges or paired relations.
 - Avoid em-dash sentence interruptions in formal paper prose; use commas, parentheses, or a separate sentence.
 
+## Character and LaTeX Compatibility
+
+Treat these as equivalent forms when judging whether to keep a term:
+
+| Plain ASCII | Unicode manuscript form | LaTeX-like form |
+|---|---|---|
+| `matrix-vug coupling` | `matrix–vug coupling` | `matrix--vug coupling` |
+| `matrix-vug connectivity` | `matrix–vug connectivity` | `matrix--vug connectivity` |
+| `solid-liquid interface` | `solid–liquid interface` | `solid--liquid interface` |
+| `solid-fluid interface` | `solid–fluid interface` | `solid--fluid interface` |
+| `advection-diffusion` | `advection–diffusion` | `advection--diffusion` |
+| `transport-reaction competition` | `transport–reaction competition` | `transport--reaction competition` |
+| `Peclet-Damkohler` | `Péclet–Damköhler` | `P\\'eclet--Damk\\\"ohler` |
+
+Do not change dash type, accents, or LaTeX spelling unless the user asks for journal-style or LaTeX normalization.
+
 ## Editing Rule
 
 If a dash compound is not listed above:

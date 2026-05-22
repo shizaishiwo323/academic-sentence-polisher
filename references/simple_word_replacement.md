@@ -42,6 +42,11 @@ If the replacement may change the meaning, keep the original word or mark `autho
 | `is capable of` | `can` |
 | `gives rise to` | `produces`, `forms`, `leads to` |
 | `is indicative of` | `indicates` |
+| `substantiate` | `support` |
+| `underscore` | `show`, `highlight`, or delete |
+| `shed light on` | `show`, `explain`, `help explain` |
+| `offer insights into` | state the specific finding |
+| `serve as a basis for` | `support`, `provide`, or delete |
 
 ## Do Not Oversimplify These Technical Words
 
