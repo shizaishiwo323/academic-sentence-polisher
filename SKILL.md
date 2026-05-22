@@ -5,44 +5,97 @@ description: Polish academic manuscript sentences while preserving scientific me
 
 # Academic Sentence Polisher
 
-The goal is not to make the text sound more impressive. The goal is to make the original scientific meaning easier to read, more precise, and less overstated.
+## Purpose
+
+Improve academic sentence-level expression while preserving the original scientific meaning, evidence strength, logic, citations, equations, labels, and paragraph structure.
+
+The goal is not to make the text sound more impressive, but to make the original scientific meaning easier to read, more precise, and less overstated.
 
 ## Scope
 
-Polish sentence expression only:
+This skill can:
 
-- improve clarity, precision, restraint, and readability;
-- reduce AI-like wording, decorative intensifiers, vague contribution claims, and unnecessary compound terms;
-- preserve scientific meaning, evidence strength, citations, variables, equations, figure references, labels, and paragraph structure;
-- use the smallest effective edit.
+- improve sentence clarity;
+- reduce AI-like phrasing;
+- simplify unnecessarily complex wording;
+- remove or revise unnecessary dash compounds;
+- downgrade overstatements;
+- define or simplify unclear technical terms;
+- improve grammar and flow with minimal edits.
 
-Do not:
+This skill must not:
 
-- add new mechanisms, claims, citations, implications, comparisons, or literature judgments;
-- reorganize paragraphs or change the manuscript storyline;
-- turn cautious statements into stronger conclusions;
-- replace precise technical terms with vague popular wording;
-- introduce fancy compound terms or em-dash emphasis;
-- rewrite a whole paragraph when local sentence edits are enough.
+- add new scientific claims, mechanisms, interpretations, citations, or implications;
+- change paragraph logic, manuscript structure, or storyline;
+- strengthen conclusions beyond the original evidence;
+- convert cautious statements into broad claims;
+- replace precise technical terms with vague popular terms;
+- rewrite a well-functioning sentence merely to make it sound more polished.
 
 If a requested edit depends on technical truth, mechanism, causality, terminology definition, or literature coverage that is not explicit in the source text, mark it as `author-confirm` rather than inventing the answer.
 
-## Core Workflow
+## Highest-Priority Principles
 
-1. Preserve protected content.
-   Check numbers, variables, units, equations, citations, figure labels, section labels, defined terms, and comparison baselines before editing.
+1. Preserve meaning before improving style.
+2. Use the smallest effective edit.
+3. Do not make the sentence sound more important than the evidence allows.
+4. Prefer simple and precise words over fancy words.
+5. Keep technical terms when they are standard in the field.
+6. Do not introduce a new term unless the original text already requires it.
+7. Do not change numbers, variables, citations, equations, labels, figure references, or table references.
 
-2. Identify sentence-level problems only.
-   Use problem labels such as `undefined-term`, `overclaim`, `unnecessary-compound`, `heavy-nominalization`, `rare-word`, `long-subject`, `unclear-causal-link`, or `evidence-strength-risk`.
+## Workflow
 
-3. Apply minimum effective edits.
-   Prefer word replacement over phrase replacement, phrase replacement over sentence restructuring, and sentence restructuring over sentence splitting.
+### Step 1. Identify protected content
 
-4. Check evidence strength.
-   Ensure the revised sentence does not add a mechanism, broaden the scope, remove uncertainty, or make local evidence sound general.
+Before editing, identify and preserve:
 
-5. Return a concise polishing result.
-   Default output:
+- numerical values, units, variables, and symbols;
+- LaTeX commands and equations;
+- citations and references;
+- figure, table, text, and equation labels;
+- technical terms and abbreviations;
+- stated causal relationships;
+- uncertainty markers and evidence strength.
+
+### Step 2. Diagnose sentence-level problems
+
+Check whether the sentence contains:
+
+- undefined or unnecessary fancy terms;
+- unnecessary dash compounds;
+- overclaiming or overly strong adverbs;
+- rare, decorative, or unnatural words;
+- heavy nominalization;
+- long or unclear subjects;
+- unclear causal connectors;
+- AI-like summary or contribution phrases.
+
+### Step 3. Apply minimal edits
+
+Prefer the smallest possible change:
+
+```text
+word replacement > phrase replacement > clause restructuring > sentence splitting
+```
+
+Do not rewrite the whole sentence if replacing one phrase solves the problem. Do not rewrite the whole paragraph unless the user explicitly asks.
+
+### Step 4. Check evidence strength
+
+After editing, check:
+
+- Did the revision add a new claim?
+- Did it make the claim stronger?
+- Did it imply broader applicability?
+- Did it add a mechanism not stated in the original?
+- Did it change uncertainty or causality?
+
+If yes, revise again to restore the original evidence strength.
+
+### Step 5. Produce a concise output
+
+Use the requested output style. If the user does not specify a format, use:
 
 ```text
 Revised version:
@@ -60,27 +113,27 @@ Keep the explanation short. This skill is for polishing sentences, not reviewing
 
 ## Reference Loading
 
-Load only the references needed for the task:
+Load only the files needed for the sentence being polished:
 
-- Always load `references/style_principles.md` for sentence-level style rules.
-- Load `references/ai_smell_checklist.md` when diagnosing AI-like wording before revision.
-- Load `references/simple_word_replacements.md` when replacing rare, decorative, or inflated vocabulary.
-- Load `references/terminology_definition_rules.md` when a central technical term, metric, regime, or manuscript-specific phrase may need definition.
-- Load `references/corpus_rule_cards.md` when the sentence function matters, such as gap, method, result, comparison, mechanism, implication, or limitation sentences.
-- Load `references/dash_policy.md` when handling hyphenated terms, en-dash relations, compound modifiers, or AI-like invented terms.
-- Load `references/overclaim_downgrade_table.md` when the sentence contains strong verbs, intensifiers, novelty claims, broad implications, or scale jumps.
-- Load `references/before_after_examples.md` when the user wants examples or when a polishing behavior needs a local template.
-- Load `references/validation_checklist.md` before finalizing multi-sentence or high-risk polishing.
-- Load `references/test_cases.md` when testing or improving the skill.
-- Load `references/extraction_protocol.md` only when expanding the corpus or adding new rule cards from reference papers.
+- Load `references/dash_policy.md` for hyphenated terms, en-dash relations, compound modifiers, or AI-like invented compounds.
+- Load `references/overclaim_downgrade.md` for strong verbs, intensifiers, novelty claims, broad implications, or scale jumps.
+- Load `references/simple_word_replacement.md` for rare, decorative, inflated, or AI-like vocabulary.
+- Load `references/terminology_definition.md` for central technical terms, manuscript-specific metrics, regimes, abbreviations, or unclear named relations.
 
-## Decision Rules
+Do not load extended corpus notes, examples, or test files unless the user explicitly asks to expand or test the skill.
 
-- Define central non-obvious terms at first meaningful use; do not define common terms just to sound formal.
-- Report observations before interpretation.
-- Use observation -> process -> implication for mechanism sentences only when all three elements are already present or directly supported.
-- Use cautious verbs for interpretive claims: `suggests`, `indicates`, `is consistent with`, `may reflect`.
-- Use strong verbs such as `demonstrates`, `establishes`, or `controls` only when the source text directly supports that strength.
-- Preserve scope markers such as `in this system`, `under these conditions`, `for the tested cases`, and `in simulations`.
-- Keep established technical compounds; rewrite decorative or newly invented compounds as plain phrases.
-- Prefer simple academic vocabulary when it is equally precise.
+## Do Not Do
+
+Do not:
+
+- add background information;
+- add transition sentences;
+- add literature comparisons;
+- add broader implications;
+- add novelty claims;
+- add field-scale implications unless already stated;
+- introduce new compound terms;
+- use em dashes for dramatic emphasis;
+- use inflated words such as `revolutionary`, `unprecedented`, `critical`, or `remarkable` unless the evidence explicitly supports them;
+- change `suggests` to `demonstrates`, `indicates` to `proves`, or `may` to an unqualified claim;
+- change `under these conditions` or `in these simulations` into a general statement.
