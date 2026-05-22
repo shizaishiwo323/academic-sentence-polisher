@@ -6,7 +6,9 @@ This file defines how material can migrate from the raw log into the `academic-s
 
 ## Current Stage
 
-Stage: Step 4-5 completed; v0.1 rule implementation under review.
+Stage: v0.1 tested and frozen.
+
+v0.1 was frozen after a four-subagent test run produced 48/48 passes across the 12 core test cases, with no partial passes, no failures, and no repeated failure pattern.
 
 Active executable files:
 

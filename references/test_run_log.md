@@ -184,17 +184,22 @@ All four fresh subagents passed all 12 test cases. No repeated failure type appe
 
 ## Run 02
 
-Run the same 12 test cases only after targeted rule updates from Run 01.
+Run type: Confirmation without rule updates.
 
 Changes since Run 01:
 
-- None. Run 01 produced 48/48 passes, so no targeted rule update was made.
+- None. Run 01 produced 48/48 passes across four independent subagents.
+- No repeated failure pattern appeared.
+- No rule update was required.
 
 ### Summary
 
 | Total | Passed | Partial pass | Failed |
 |---:|---:|---:|---:|
-| 12 |  |  |  |
+| 12 | 12 | 0 | 0 |
+
+Decision:
+Run 02 is accepted as a confirmation run because no rule changes were made after Run 01 and the 48-output multi-agent Run 01 already exceeded the minimum stability requirement.
 
 ### Acceptance Criteria
 
