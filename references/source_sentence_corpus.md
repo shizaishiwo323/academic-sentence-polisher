@@ -2,6 +2,16 @@
 
 This file stores selected sentence-level examples from seven high-quality papers. The goal is to extract reusable writing rules for academic sentence polishing, not to copy source sentences or imitate the scientific content.
 
+## Use Status Legend
+
+| Status | Meaning |
+|---|---|
+| `positive` | Good source for a preferred expression pattern |
+| `caution` | Useful local feature, but not safe to imitate directly because of strong wording, long syntax, or other risks |
+| `negative` | Counterexample or test-only sentence |
+
+If this corpus is prepared for a public repository, replace full source sentences with short paraphrases or source pointers while keeping the extracted rules.
+
 ## Corpus Overview
 
 | Paper ID | Paper short name | Journal | Field | Why selected |
@@ -28,6 +38,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Introduction  
 **Function tag:** DEF  
 **Score:** 9/10  
+**Use status:** positive
 
 **Source sentence:**  
 > This relation, known as Archie's law, relates a material's resistivity at saturation to its porosity and the pore fluid resistivity with a power function.
@@ -44,6 +55,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Introduction  
 **Function tag:** GAP  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > At present, a physical understanding of the exponent is still limited mainly due to the lack of the detailed information on the complex geometry of the pore space.
@@ -60,6 +72,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Introduction  
 **Function tag:** AIM  
 **Score:** 9/10  
+**Use status:** positive
 
 **Source sentence:**  
 > Here we use computational simulations to obtain the microscale geometrical characteristics of synthetic granular materials and to analyze the dominant parameter(s) impacting the exponent.
@@ -76,6 +89,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Methods  
 **Function tag:** MET  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > The samples presented here consist of spherical and oblate particles, and the solid-phase concentration varies broadly, from dilute (i.e., a limited particle-particle interaction; ϕ > ~65%) to dense states (i.e., ϕ = ~30%).
@@ -92,6 +106,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Methods  
 **Function tag:** DEF  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > In each sample, all the particles have the same shape (e = 1, 0.67, or 0.5 where e is the ratio of the semiminor to semimajor axes), and the particle size follows either a Dirac delta distribution centered at d or a uniform distribution in the range [0.5d, 1.5d].
@@ -108,6 +123,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Results  
 **Function tag:** RES  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > At dilute state, m roughly keeps constant; as ϕ decreases, m increases continuously.
@@ -124,6 +140,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Results  
 **Function tag:** RES  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > At dilute state, we found that m of multisized and monosized samples with same particle shape is almost identical, suggesting limited effects of particle size range on m.
@@ -140,6 +157,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Results  
 **Function tag:** IMP  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > This observed dependence of particle size range on m of nondilute granular samples is consistent with some experimental data, for example, as reviewed by Friedman (2005).
@@ -156,6 +174,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Discussion  
 **Function tag:** IMP  
 **Score:** 9/10  
+**Use status:** caution
 
 **Source sentence:**  
 > This unique trend suggests that there might be a universal correlation between the increase in m (relative to the dilute state of individual samples) and the relative volume of pore throats for granular materials.
@@ -172,6 +191,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Conclusions  
 **Function tag:** IMP  
 **Score:** 8/10  
+**Use status:** caution
 
 **Source sentence:**  
 > Our numerical results also suggest that for granular materials, a universal relation might exist, which links the volume fraction of pore throats to the increase in m (relative to the value at dilute state m0) regardless of the particle shape, particle size range, and porosities.
@@ -197,6 +217,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Introduction  
 **Function tag:** GAP  
 **Score:** 8/10  
+**Use status:** caution
 
 **Source sentence:**  
 > However, distinguishing between regimes often relies solely on qualitative, visual comparisons of emergent structures.
@@ -213,6 +234,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Introduction  
 **Function tag:** AIM  
 **Score:** 9/10  
+**Use status:** positive
 
 **Source sentence:**  
 > Here, we propose a quantitative measure capable of identifying different regimes using the concept of the spatial flow focusing profile, which segments the medium into cross sections along the flow direction to calculate the flow focusing index for each section.
@@ -229,6 +251,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Methods  
 **Function tag:** MET  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > To demonstrate the performance of the proposed flow focusing profile and to quantitatively describe various dissolution regimes, we use the capillary pore network model of a dissolving porous medium.
@@ -245,6 +268,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Methods  
 **Function tag:** DEF  
 **Score:** 9/10  
+**Use status:** positive
 
 **Source sentence:**  
 > To compare the evolution for different dissolution regimes, we measure time in the simulation in terms of the total dissolved volume in the system, with T = ΔVtot/V0, where V0 is the initial total pore volume and ΔVtot is the dissolved volume.
@@ -261,6 +285,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Methods  
 **Function tag:** MET  
 **Score:** 9/10  
+**Use status:** positive
 
 **Source sentence:**  
 > We segment the medium into cross sections along the main flow direction, x, and in each of them we calculate the flow focusing index, f50%.
@@ -277,6 +302,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Results  
 **Function tag:** RES  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > As the wormhole begins to develop from the inlet, the profile in that area rapidly increases, approaching values close to one.
@@ -293,6 +319,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Results  
 **Function tag:** CON  
 **Score:** 9/10  
+**Use status:** positive
 
 **Source sentence:**  
 > Unlike the wormholing regime, where the pathway grows from the inlet to the outlet, channeling involves almost uniform enlargement.
@@ -309,6 +336,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Results  
 **Function tag:** RES  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > For small Damköhler numbers, the dissolution occurs in the uniform regime, where the reactant penetration length is comparable to the size of the system.
@@ -325,6 +353,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Results  
 **Function tag:** CON  
 **Score:** 8/10  
+**Use status:** caution
 
 **Source sentence:**  
 > Although the boundaries between the regimes are subtle, it is evident that at low network heterogeneity, the dissolution exhibits features of wormholing, characterized by a progressing front in the flow focusing profile and asymmetric flow paths forming from the inlet.
@@ -341,6 +370,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Discussion  
 **Function tag:** ASS  
 **Score:** 9/10  
+**Use status:** positive
 
 **Source sentence:**  
 > However, the flow focusing profile may be less suitable for experiments and field applications where flow distribution data might not be readily available.
@@ -366,6 +396,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Introduction  
 **Function tag:** DEF  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > This process is known as Fickian transport and can be well described by the classical advection-dispersion equation.
@@ -382,6 +413,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Introduction  
 **Function tag:** CON  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > However, in heterogeneous media, variations in permeability induce velocity heterogeneity, leading to preferential flow pathways and stagnant zones.
@@ -398,6 +430,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Introduction  
 **Function tag:** GAP  
 **Score:** 9/10  
+**Use status:** caution
 
 **Source sentence:**  
 > However, most studies on anomalous transport have primarily focused on cases where the structural heterogeneity of the rock remains constant.
@@ -414,6 +447,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Methods  
 **Function tag:** MET  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > The 2D pore network represents the porous media as a series of interconnected cylindrical capillaries with a constant length l0.
@@ -430,6 +464,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Methods  
 **Function tag:** DEF  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > The points where pores intersect are denoted as nodes, which are assumed to be volumeless and therefore non-reactive.
@@ -446,6 +481,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Methods  
 **Function tag:** ASS  
 **Score:** 9/10  
+**Use status:** positive
 
 **Source sentence:**  
 > However, for the range of flow and reaction rates considered in this study, the entrance length is small relative to the pore length, allowing us to neglect entrance effects.
@@ -462,6 +498,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Results  
 **Function tag:** RES  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > As seen in Figure 2a, the BTC changes from a distribution with limited spreading to a distribution featuring early arrival and late-time tailing.
@@ -478,6 +515,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Results  
 **Function tag:** IMP  
 **Score:** 9/10  
+**Use status:** positive
 
 **Source sentence:**  
 > The wormholes form due to reactive-infiltration instability, based on a positive feedback loop between flow, transport, and dissolution.
@@ -494,6 +532,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Results  
 **Function tag:** RES  
 **Score:** 9/10  
+**Use status:** caution
 
 **Source sentence:**  
 > Figure 5 shows that, regardless of the initial heterogeneity, wormholing leads to non-Fickian transport, while uniform dissolution results in Fickian transport.
@@ -510,6 +549,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Discussion  
 **Function tag:** ASS  
 **Score:** 9/10  
+**Use status:** positive
 
 **Source sentence:**  
 > Although this study is based on a 2D pore network, both wormholing and uniform dissolution have commonly observed in 3D systems.
@@ -535,6 +575,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Introduction  
 **Function tag:** GAP  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > Although NMR can provide detailed insights into pore coupling within saturated soils and rocks, its application in unsaturated subsurface materials remains challenging, even at the laboratory scale.
@@ -551,6 +592,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Introduction  
 **Function tag:** GAP  
 **Score:** 9/10  
+**Use status:** positive
 
 **Source sentence:**  
 > In particular, how the degree of pore coupling changes with decreasing saturation, and how this change can be observed and quantified, remains unresolved.
@@ -567,6 +609,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Introduction  
 **Function tag:** DEF  
 **Score:** 8/10  
+**Use status:** caution
 
 **Source sentence:**  
 > The 2D T2-store-T2 map captures this process through asymmetric off-diagonal peaks, which indicate magnetized proton exchange between pores and reflect both proton chemical shifts and inter-pore molecular exchange during mixing periods.
@@ -583,6 +626,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Methods  
 **Function tag:** DEF  
 **Score:** 9/10  
+**Use status:** positive
 
 **Source sentence:**  
 > Here, Sw = Vw / Vpore, where Vw is water volume and Vpore is total pore volume.
@@ -599,6 +643,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Methods  
 **Function tag:** MET  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > Sealed samples were scanned at 3 μm voxel resolution, and three-phase segmentation (solid, fluid, and air) was performed on reconstructed 2D grayscale cross-sections along the vertical height.
@@ -615,6 +660,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Results  
 **Function tag:** RES  
 **Score:** 9/10  
+**Use status:** positive
 
 **Source sentence:**  
 > With decreasing saturation, the amplitude of the longest-relaxation time peak decreases more significantly than that of the shorter-relaxation components, reflecting the preferential moisture reduction within the largest pores.
@@ -631,6 +677,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Results  
 **Function tag:** RES  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > As saturation decreases, the peaks progressively separate, producing a clearer distinction between the long- and short-relaxation components at Sw = 85% and 70%.
@@ -647,6 +694,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Results  
 **Function tag:** DEF  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > Thus, in Figure 2e, diagonal peaks P11, 22 respectively represent magnetized protons remaining within large and small pore environments, while off-diagonal peaks P12, 21 correspond to protons diffusing from large to small pores and small to large pores, respectively.
@@ -663,6 +711,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Discussion  
 **Function tag:** IMP  
 **Score:** 9/10  
+**Use status:** caution
 
 **Source sentence:**  
 > This quantitative trend reflects the reduced proportion of inter-pore magnetized proton exchange and demonstrates that T2-store-T2 maps provide insight into quantitatively tracking the weakening pore coupling in multi-pore systems as saturation decreases.
@@ -679,6 +728,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Discussion  
 **Function tag:** ASS  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > While our study focuses on geometric controls, ρs remains an important external factor that can influence NMR sensitivity to pore coupling.
@@ -704,6 +754,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Introduction  
 **Function tag:** GAP  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > However, it is still difficult to incorporate surface-related electrochemical processes in a pore-scale simulation.
@@ -720,6 +771,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Introduction  
 **Function tag:** AIM  
 **Score:** 9/10  
+**Use status:** caution
 
 **Source sentence:**  
 > In this study, we develop a general framework to consider these electrochemical processes in pore-scale simulations, which enable the calculation of broadband effective electrical conductivity and permittivity of porous geological media.
@@ -736,6 +788,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** General Definition and Terminology  
 **Function tag:** DEF  
 **Score:** 9/10  
+**Use status:** positive
 
 **Source sentence:**  
 > In this paper, we use the electrical conductivity and electrical permittivity to describe the electrical properties of a material at a given frequency.
@@ -752,6 +805,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** General Definition and Terminology  
 **Function tag:** DEF  
 **Score:** 9/10  
+**Use status:** positive
 
 **Source sentence:**  
 > To distinguish the average properties from the property of individual phases, in this paper, we use the effective electrical conductivity and effective electrical permittivity to indicate the average (or measured) properties of geological materials.
@@ -768,6 +822,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Methods  
 **Function tag:** MET  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > In this study, we use the pore network extraction algorithms to determine these properties.
@@ -784,6 +839,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Methods  
 **Function tag:** MET  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > The proposed framework is outlined in Figure 2, and the details are discussed as follows.
@@ -800,6 +856,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Methods  
 **Function tag:** ASS  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > Note that this type of model is only valid for large grains with a ≫ λ, where λ is the Debye length.
@@ -816,6 +873,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Results  
 **Function tag:** RES  
 **Score:** 9/10  
+**Use status:** positive
 
 **Source sentence:**  
 > The simulated effective permittivity due to the interfacial polarization is similar to the experiment results, and both curves exhibit a high permittivity plateau at low frequencies and a low effective permittivity at high frequencies.
@@ -832,6 +890,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Results  
 **Function tag:** IMP  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > This discrepancy might be due to fact that the resolution of the digital microstructural μCT images did not capture the nanometer-scale heterogeneities at the solid-liquid interface.
@@ -848,6 +907,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Conclusions  
 **Function tag:** ASS  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > This may be due to the use of a small sample volume (~1 mm3) in the simulation that cannot consider the polarizations occurring in larger pores.
@@ -873,6 +933,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Introduction  
 **Function tag:** AIM  
 **Score:** 9/10  
+**Use status:** positive
 
 **Source sentence:**  
 > This study aims to understand whether the commonly used, electrical tortuosity-based permeability model, k = reff2/8F, still works for rocks in different mineral precipitation/dissolution scenarios using a pore-scale, numerical approach.
@@ -889,6 +950,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Theory  
 **Function tag:** DEF  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > Here “equivalent” means the permeability of porous media with these two pore spaces is the same.
@@ -905,6 +967,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Methods  
 **Function tag:** DEF  
 **Score:** 9/10  
+**Use status:** positive
 
 **Source sentence:**  
 > The Pe number compares the rate of advection to the rate of diffusion, and it can be defined as Pe = uLc/Dm.
@@ -921,6 +984,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Methods  
 **Function tag:** DEF  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > As observed in laboratory experiments, the reaction-limited precipitation/dissolution pattern is characterized by a roughly uniform growth/removal of minerals at the solid-liquid interface.
@@ -937,6 +1001,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Methods  
 **Function tag:** MET  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > In this study, we use simplified models to mimic the precipitation and dissolution at the pore scale, aiming to capture the main macroscopic features of the samples as observed in laboratory experiments.
@@ -953,6 +1018,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Results  
 **Function tag:** RES  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > For reaction-limited case, both exponents (n and m) are almost constant without a large variation.
@@ -969,6 +1035,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Results  
 **Function tag:** CON  
 **Score:** 9/10  
+**Use status:** positive
 
 **Source sentence:**  
 > For transport-limited cases in Figure 4, both exponents varied considerably despite the minor porosity reduction.
@@ -985,6 +1052,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Results  
 **Function tag:** IMP  
 **Score:** 9/10  
+**Use status:** positive
 
 **Source sentence:**  
 > This is understandable because it is the pore throat rather than pore body that controls the fluid flow in porous media.
@@ -1001,6 +1069,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Discussion  
 **Function tag:** IMP  
 **Score:** 9/10  
+**Use status:** positive
 
 **Source sentence:**  
 > This indicates that the applicability of the electrical tortuosity-based permeability model largely depends on the patterns of the mineral precipitation and dissolution.
@@ -1017,6 +1086,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Conclusions  
 **Function tag:** CON  
 **Score:** 8/10  
+**Use status:** caution
 
 **Source sentence:**  
 > Compared to reaction-limited cases, transport-limited precipitation/dissolution has a more profound influence on fluid/electric flow and it may be characterized by a sharply changed n or m.
@@ -1042,6 +1112,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Introduction  
 **Function tag:** GAP  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > While NMR can provide detailed insights into water content and distribution within saturated soils and rocks, interpreting NMR signals from unsaturated subsurface materials remains challenging, even at the laboratory scale.
@@ -1058,6 +1129,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Introduction  
 **Function tag:** GAP  
 **Score:** 9/10  
+**Use status:** caution
 
 **Source sentence:**  
 > However, no study has shown the effect of different pore sizes and shapes on unsaturated NMR relaxation behaviors, contributing to interpretation challenges of unsaturated NMR responses.
@@ -1074,6 +1146,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Methods  
 **Function tag:** DEF  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > Fast diffusion, with κ << 1, represents that the diffusion rate is higher than the relaxation rate.
@@ -1090,6 +1163,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Methods  
 **Function tag:** ASS  
 **Score:** 9/10  
+**Use status:** positive
 
 **Source sentence:**  
 > While the pore shape and pore size distribution are extremely complex in natural soil or rock, we use the idealized simple geometry model in our simulation.
@@ -1106,6 +1180,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Methods  
 **Function tag:** MET  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > In this study, we use spherical and triangle-shaped pore models to represent the unit cell of porous media, while the pore size distribution of porous media can be represented by constructing multiple pores with different sizes.
@@ -1122,6 +1197,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Results  
 **Function tag:** RES  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > From unsaturated to saturated state, in the absence of surface interactions, the T2 amplitude increases, while the peak position remains unchanged.
@@ -1138,6 +1214,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Results  
 **Function tag:** CON  
 **Score:** 9/10  
+**Use status:** caution
 
 **Source sentence:**  
 > However, for ρs = 5 and 15 μm/s, not only does the amplitude of the peak in T2-distribution increase, but the peak also shifts from short to long relaxation time components.
@@ -1154,6 +1231,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Results  
 **Function tag:** RES  
 **Score:** 8/10  
+**Use status:** positive
 
 **Source sentence:**  
 > Compared with the system at Sw = 28%, the system at Sw = 44.3%, 79.7%, and 100% shows a decrease in the amplitude of shorter relaxation T2 components.
@@ -1170,6 +1248,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Discussion  
 **Function tag:** IMP  
 **Score:** 9/10  
+**Use status:** caution
 
 **Source sentence:**  
 > Our results suggest that for two rock or soil samples with similar pore size distributions, if the pore shapes in the two samples are different, even if their T2-distributions exhibit distinct two relaxation time peaks with similar characteristics under the saturated state, the saturations of the overlap of two relaxation time peaks in their T2-distribution are distinct under the unsaturated state.
@@ -1186,6 +1265,7 @@ This file stores selected sentence-level examples from seven high-quality papers
 **Section:** Conclusion  
 **Function tag:** IMP  
 **Score:** 8/10  
+**Use status:** caution
 
 **Source sentence:**  
 > This pattern of pore water dynamic distribution ensures that the small pores do not exceed their maximum saturation capacity, avoiding common misinterpretations.

@@ -49,6 +49,18 @@ The corpus can later be expanded to 12-15 records per paper after the rule cards
 | `CON` | Compares cases, mechanisms, or prior work | Use contrast to clarify, not to exaggerate |
 | `IMP` | Interprets mechanism, implication, limitation, or future use | Keep interpretation tied to evidence and conditions |
 
+## Use Status
+
+Every source record must include a `Use status` field so the skill does not treat all source sentences as positive templates.
+
+| Status | Meaning | How to use it |
+|---|---|---|
+| `positive` | The sentence is a good expression model | Use it as a source for preferred patterns |
+| `caution` | The sentence has a useful local feature but also has risks such as strong words, long conditions, or awkward syntax | Extract the rule, but do not copy the surface form directly |
+| `negative` | The sentence is useful only as a counterexample or test case | Use it for checking what the skill should avoid |
+
+Mark as `caution` when the sentence contains high-risk expressions such as `solely`, `no study`, `universal`, `demonstrates`, `ensures`, `profound`, or `sharply`, or when the sentence is too long to be used as a direct template.
+
 ## Scoring
 
 Each candidate sentence is scored out of 10. Keep records scoring 7 or above.
@@ -90,6 +102,7 @@ Use a block record rather than a large table.
 **Section:** Introduction / Methods / Results / Discussion / Conclusion  
 **Function tag:** DEF / GAP / AIM / MET / ASS / RES / CON / IMP  
 **Score:** 7-10/10  
+**Use status:** positive / caution / negative
 
 **Source sentence:**  
 > One selected sentence.
@@ -122,10 +135,20 @@ An instruction that can be copied into the polishing skill.
    - Verify: every retained sentence scores 7 or above and has a function tag.
 
 3. Convert each sentence into a rule-oriented record.
-   - Verify: every record contains `Transferable rule`, `Risk when misused`, and `Skill-ready instruction`.
+   - Verify: every record contains `Use status`, `Transferable rule`, `Risk when misused`, and `Skill-ready instruction`.
 
 4. Consolidate rules by function tag into `corpus_rule_cards.md`.
-   - Verify: each tag has multiple rule cards and at least one preferred pattern.
+   - Verify: each tag has multiple rule cards, at least one preferred pattern, and `Derived from` source mapping.
+
+## Rule-Card Traceability
+
+Every rule card in `corpus_rule_cards.md` must include:
+
+```markdown
+**Derived from:** Pxx-Sxx, Pxx-Sxx
+```
+
+This prevents rule drift during future iterations. If a rule cannot be traced to the corpus, the user's known problem list, or an explicit academic-writing principle, do not add it.
 
 ## Quality Control
 
@@ -136,4 +159,5 @@ After each extraction pass, check:
 - no record is just a copied sentence without analysis;
 - every record supports sentence polishing rather than scientific argument revision;
 - every record can help decide whether to define a term, remove a fancy phrase, reduce overclaim, simplify syntax, or preserve evidence strength;
-- no rule encourages adding mechanisms, new interpretations, or broader claims.
+- no rule encourages adding mechanisms, new interpretations, or broader claims;
+- high-risk positive examples are marked `caution` rather than treated as direct style templates.

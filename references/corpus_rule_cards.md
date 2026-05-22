@@ -2,7 +2,11 @@
 
 These cards compress the sentence records in `source_sentence_corpus.md` into executable rules for sentence-level academic polishing. They are rules for expression only; they must not change scientific logic, evidence, citations, variables, equations, figure labels, or paragraph structure.
 
+Each rule card includes `Derived from` so the rule can be traced back to specific corpus records. Do not add future rules without this mapping.
+
 ## DEF-01: Define central terms at first meaningful use
+
+**Derived from:** P01-S01, P05-S03, P06-S02
 
 **Problem addressed:** AI-style writing often introduces a fancy noun or named framework without telling the reader what it means.  
 **Rule:** If a term is central and not self-explanatory, define it immediately with a short appositive, relative clause, or `where` clause.  
@@ -15,6 +19,8 @@ These cards compress the sentence records in `source_sentence_corpus.md` into ex
 
 ## DEF-02: Pair equations and symbols with plain-language meaning
 
+**Derived from:** P01-S05, P02-S04, P04-S04, P06-S03, P07-S03
+
 **Problem addressed:** Polishing can make formula sentences cleaner but accidentally remove the meaning of symbols.  
 **Rule:** Keep equations, variables, inequalities, and ranges intact; simplify only the surrounding prose.  
 **Preferred patterns:**
@@ -25,6 +31,8 @@ These cards compress the sentence records in `source_sentence_corpus.md` into ex
 **Skill instruction:** Treat equations and variable definitions as protected content.
 
 ## DEF-03: Define regimes through observable behavior
+
+**Derived from:** P02-S08, P03-S01, P06-S04, P07-S03
 
 **Problem addressed:** AI often treats regime labels as self-explanatory.  
 **Rule:** When a sentence introduces a regime, state the behavior, condition, or observation that defines it.  
@@ -37,6 +45,8 @@ These cards compress the sentence records in `source_sentence_corpus.md` into ex
 
 ## GAP-01: Acknowledge existing capability before naming the hard case
 
+**Derived from:** P04-S01, P07-S01
+
 **Problem addressed:** AI gap sentences often make prior work sound useless.  
 **Rule:** Use concession when the method works in one setting but remains difficult in another.  
 **Preferred patterns:**
@@ -46,6 +56,8 @@ These cards compress the sentence records in `source_sentence_corpus.md` into ex
 **Skill instruction:** Preserve balanced gap framing and avoid dismissive language.
 
 ## GAP-02: Make the missing piece specific
+
+**Derived from:** P01-S02, P04-S02, P07-S02
 
 **Problem addressed:** Vague gaps such as `little is known` do not help the reader.  
 **Rule:** Name the unresolved relation, mechanism, metric, scale, condition, or variable.  
@@ -57,6 +69,8 @@ These cards compress the sentence records in `source_sentence_corpus.md` into ex
 
 ## GAP-03: State scope limitations, not literature failure
 
+**Derived from:** P02-S01, P03-S03
+
 **Problem addressed:** AI gap language often overstates by saying prior studies `ignored` or `failed`.  
 **Rule:** Describe what prior studies mainly focused on and what assumption remains untested.  
 **Preferred patterns:**
@@ -66,6 +80,8 @@ These cards compress the sentence records in `source_sentence_corpus.md` into ex
 **Skill instruction:** Use scope-based gap wording for literature review sentences.
 
 ## GAP-04: Use exclusivity words only with evidence
+
+**Derived from:** P02-S01, P03-S03, P07-S02
 
 **Problem addressed:** Words such as `solely`, `no study`, and `only` can overclaim.  
 **Rule:** Retain exclusivity only when the original literature review supports it; otherwise downgrade.  
@@ -78,6 +94,8 @@ These cards compress the sentence records in `source_sentence_corpus.md` into ex
 
 ## AIM-01: Say what the study does before why it matters
 
+**Derived from:** P01-S03, P06-S01
+
 **Problem addressed:** AI often turns study aims into promotional contribution claims.  
 **Rule:** Aim sentences should name method, object, and target relation.  
 **Preferred patterns:**
@@ -87,6 +105,8 @@ These cards compress the sentence records in `source_sentence_corpus.md` into ex
 **Skill instruction:** Keep aim sentences procedural, direct, and bounded.
 
 ## AIM-02: Define a new metric by operation and output
+
+**Derived from:** P02-S02, P02-S05
 
 **Problem addressed:** New metric names can sound like decorative frameworks.  
 **Rule:** When introducing a metric, state what it segments, measures, calculates, or compares.  
@@ -98,6 +118,8 @@ These cards compress the sentence records in `source_sentence_corpus.md` into ex
 
 ## AIM-03: Keep framework claims concrete
 
+**Derived from:** P05-S02, P05-S06
+
 **Problem addressed:** `framework` can become a fancy placeholder.  
 **Rule:** Use `framework` only when the sentence specifies the processes included and quantities produced.  
 **Preferred patterns:**
@@ -107,6 +129,8 @@ These cards compress the sentence records in `source_sentence_corpus.md` into ex
 **Skill instruction:** Replace empty framework language with concrete method-output wording.
 
 ## MET-01: Use direct verbs for method steps
+
+**Derived from:** P02-S05, P04-S05, P05-S05
 
 **Problem addressed:** AI often turns simple method actions into nominalized prose.  
 **Rule:** Prefer verbs such as `use`, `segment`, `calculate`, `scan`, `extract`, and `compare`.  
@@ -118,6 +142,8 @@ These cards compress the sentence records in `source_sentence_corpus.md` into ex
 
 ## MET-02: Preserve reproducibility details
 
+**Derived from:** P01-S04, P04-S05, P07-S08
+
 **Problem addressed:** Concision edits can remove parameters needed for reproducibility.  
 **Rule:** Keep resolution, ranges, units, boundary conditions, sample states, and figure references.  
 **Preferred patterns:**
@@ -127,6 +153,8 @@ These cards compress the sentence records in `source_sentence_corpus.md` into ex
 **Skill instruction:** Protect all numerical and procedural details.
 
 ## MET-03: Explain model representation, not model ambition
+
+**Derived from:** P03-S04, P07-S05
 
 **Problem addressed:** AI method prose often adds unnecessary claims about what the model enables.  
 **Rule:** A model sentence should say what the model represents and how.  
@@ -138,6 +166,8 @@ These cards compress the sentence records in `source_sentence_corpus.md` into ex
 
 ## MET-04: Link simplified methods to intended scope
 
+**Derived from:** P06-S05, P07-S04, P07-S05
+
 **Problem addressed:** Simplified models can be polished into overconfident descriptions.  
 **Rule:** State what the simplified model is intended to mimic or capture.  
 **Preferred patterns:**
@@ -147,6 +177,8 @@ These cards compress the sentence records in `source_sentence_corpus.md` into ex
 **Skill instruction:** Preserve the intended level of simplification.
 
 ## ASS-01: State the condition that justifies a simplification
+
+**Derived from:** P03-S06, P05-S07
 
 **Problem addressed:** AI sometimes deletes the reason an assumption is acceptable.  
 **Rule:** Keep the parameter range, scale relation, or physical condition that supports an assumption.  
@@ -158,6 +190,8 @@ These cards compress the sentence records in `source_sentence_corpus.md` into ex
 
 ## ASS-02: Acknowledge excluded factors without adding new conclusions
 
+**Derived from:** P02-S10, P04-S10
+
 **Problem addressed:** AI may turn limitations into speculative discussion.  
 **Rule:** Name what the study focuses on and which factor remains outside that focus.  
 **Preferred patterns:**
@@ -167,6 +201,8 @@ These cards compress the sentence records in `source_sentence_corpus.md` into ex
 **Skill instruction:** Keep out-of-scope factors as limitations or context.
 
 ## ASS-03: Pair limitation with scope, not reassurance
+
+**Derived from:** P03-S10, P05-S10
 
 **Problem addressed:** AI often softens limitations until they disappear.  
 **Rule:** A limitation can be followed by relevance, but the constraint must remain visible.  
@@ -178,6 +214,8 @@ These cards compress the sentence records in `source_sentence_corpus.md` into ex
 
 ## RES-01: Report observation before interpretation
 
+**Derived from:** P03-S07, P04-S06
+
 **Problem addressed:** AI result sentences often jump to mechanism before the result is clear.  
 **Rule:** State the measured or observed change first; add interpretation only if already present.  
 **Preferred patterns:**
@@ -187,6 +225,8 @@ These cards compress the sentence records in `source_sentence_corpus.md` into ex
 **Skill instruction:** Keep result-first ordering.
 
 ## RES-02: Preserve comparison baselines
+
+**Derived from:** P06-S07, P07-S08
 
 **Problem addressed:** Polishing can make comparisons smoother but less precise.  
 **Rule:** Keep baseline condition, comparison condition, direction of change, and variables.  
@@ -198,6 +238,8 @@ These cards compress the sentence records in `source_sentence_corpus.md` into ex
 
 ## RES-03: State both changed and unchanged quantities
 
+**Derived from:** P01-S06, P07-S06
+
 **Problem addressed:** AI may simplify contrastive results by reporting only the change.  
 **Rule:** If one variable changes and another remains stable, preserve both.  
 **Preferred patterns:**
@@ -208,6 +250,8 @@ These cards compress the sentence records in `source_sentence_corpus.md` into ex
 
 ## RES-04: Anchor figure sentences to the key visual information
 
+**Derived from:** P03-S09, P04-S08
+
 **Problem addressed:** Figure references can become empty signposts.  
 **Rule:** State what the figure shows, including the trend, transition, or contrast.  
 **Preferred patterns:**
@@ -217,6 +261,8 @@ These cards compress the sentence records in `source_sentence_corpus.md` into ex
 **Skill instruction:** Keep figure labels and add only the observed content already present.
 
 ## RES-05: Keep magnitude words proportional to data
+
+**Derived from:** P01-S06, P02-S06, P06-S10
 
 **Problem addressed:** AI overuses `dramatically`, `significantly`, and `substantially`.  
 **Rule:** Use magnitude words only when supported by numeric values, figure trends, or original wording.  
@@ -229,6 +275,8 @@ These cards compress the sentence records in `source_sentence_corpus.md` into ex
 
 ## CON-01: Compare matched objects
 
+**Derived from:** P02-S07, P06-S10
+
 **Problem addressed:** AI comparison sentences can compare mismatched scales or concepts.  
 **Rule:** Use contrast structures only for comparable regimes, cases, variables, or models.  
 **Preferred patterns:**
@@ -238,6 +286,8 @@ These cards compress the sentence records in `source_sentence_corpus.md` into ex
 **Skill instruction:** Check that both sides of a comparison are parallel.
 
 ## CON-02: Use contrast to clarify mechanism, not to dramatize
+
+**Derived from:** P03-S09, P07-S07
 
 **Problem addressed:** AI turns contrasts into rhetorical emphasis.  
 **Rule:** Let the contrast identify a physical or methodological difference.  
@@ -249,6 +299,8 @@ These cards compress the sentence records in `source_sentence_corpus.md` into ex
 
 ## CON-03: Keep concessive uncertainty in classification
 
+**Derived from:** P02-S09, P06-S04
+
 **Problem addressed:** Gradual regime boundaries are often polished into hard categories.  
 **Rule:** Preserve markers such as `subtle`, `features of`, `approximately`, and `roughly`.  
 **Preferred patterns:**
@@ -258,6 +310,8 @@ These cards compress the sentence records in `source_sentence_corpus.md` into ex
 **Skill instruction:** Do not remove uncertainty markers from regime-classification sentences.
 
 ## IMP-01: Use tentative verbs for inference
+
+**Derived from:** P01-S08, P01-S09, P05-S09
 
 **Problem addressed:** AI often upgrades `suggests` to `demonstrates` or `proves`.  
 **Rule:** Use tentative verbs when moving from result to mechanism, discrepancy explanation, or broader relation.  
@@ -270,6 +324,8 @@ These cards compress the sentence records in `source_sentence_corpus.md` into ex
 
 ## IMP-02: Name the mechanism only if it is already present
 
+**Derived from:** P03-S08, P06-S08
+
 **Problem addressed:** AI polishers invent mechanism to make sentences sound deeper.  
 **Rule:** Clarify existing mechanism language but do not add new causal processes.  
 **Preferred patterns:**
@@ -280,6 +336,8 @@ These cards compress the sentence records in `source_sentence_corpus.md` into ex
 
 ## IMP-03: Keep broad relations bounded by domain and evidence type
 
+**Derived from:** P01-S10, P06-S09
+
 **Problem addressed:** Local results can be polished into universal conclusions.  
 **Rule:** Preserve phrases such as `for granular materials`, `in simulations`, `under these conditions`, and `for the tested cases`.  
 **Preferred patterns:**
@@ -289,6 +347,8 @@ These cards compress the sentence records in `source_sentence_corpus.md` into ex
 **Skill instruction:** Do not broaden local evidence.
 
 ## IMP-04: State practical meaning through the specific error or use case
+
+**Derived from:** P04-S09, P07-S10
 
 **Problem addressed:** AI implication sentences often become generic `new insights` claims.  
 **Rule:** Name the interpretation error avoided, the metric tracked, or the application condition.  
