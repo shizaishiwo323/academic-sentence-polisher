@@ -10,6 +10,7 @@ It does not provide paragraph-level rewriting rules. It does not teach the skill
 - `vague_subject`: subject is generic or template-like.
 - `decorative_verb`: verb sounds ornate rather than precise.
 - `template_phrase`: repeated phrase such as `giving rise to`.
+- `redundant_wording`: unnecessary degree words or repeated phrasing.
 - `invented_compound`: newly coined compound term.
 - `undefined_term`: central term is introduced without a safe definition.
 - `heavy_nominalization`: noun chain hides the action.
@@ -73,7 +74,7 @@ When the reaction is much slower than transport, the reactant penetrates approxi
 Safe local correction:
 When reaction is much slower than transport, the reactants penetrate the entire domain, leading to uniform dissolution \cite{rroded_2020_reactive}. When transport is significantly slower than reaction, dissolution localizes near the inlet as a progressing face-dissolution front \cite{cohen_2008_from}. At higher injection rates, reactive-infiltration instabilities focus flow and form wormholes \cite{fredd_1998_influence,Wang_2022}, whereas the channeling regime rapidly expands preferential flow paths along their entire trajectory \cite{menke_2016_reservoir}.
 
-Problem labels: `template_phrase`, `decorative_verb`, `heavy_nominalization`  
+Problem labels: `template_phrase`, `heavy_nominalization`, `redundant_wording`  
 May learn: Compress repeated explanatory structures while preserving regime distinctions.  
 Must not learn: Do not delete necessary regime boundaries, citations, or physical contrasts.  
 Scope: sentence-level to local multi-sentence compression.
@@ -206,7 +207,7 @@ May learn: Use concrete stage values and `while` for synchronized changes.
 Must not learn: Do not invent stage percentages or alter values, units, or figure labels.  
 Scope: sentence-level; protected technical content.
 
-## NEG-012: Abstract comparison subject
+## NEG-012: Regime comparison subject
 
 Sample type: safe-local-example  
 Auto-fix status: cautious  
