@@ -63,9 +63,15 @@ Keep the explanation short. This skill is for polishing sentences, not reviewing
 Load only the references needed for the task:
 
 - Always load `references/style_principles.md` for sentence-level style rules.
+- Load `references/ai_smell_checklist.md` when diagnosing AI-like wording before revision.
+- Load `references/simple_word_replacements.md` when replacing rare, decorative, or inflated vocabulary.
+- Load `references/terminology_definition_rules.md` when a central technical term, metric, regime, or manuscript-specific phrase may need definition.
 - Load `references/corpus_rule_cards.md` when the sentence function matters, such as gap, method, result, comparison, mechanism, implication, or limitation sentences.
 - Load `references/dash_policy.md` when handling hyphenated terms, en-dash relations, compound modifiers, or AI-like invented terms.
 - Load `references/overclaim_downgrade_table.md` when the sentence contains strong verbs, intensifiers, novelty claims, broad implications, or scale jumps.
+- Load `references/before_after_examples.md` when the user wants examples or when a polishing behavior needs a local template.
+- Load `references/validation_checklist.md` before finalizing multi-sentence or high-risk polishing.
+- Load `references/test_cases.md` when testing or improving the skill.
 - Load `references/extraction_protocol.md` only when expanding the corpus or adding new rule cards from reference papers.
 
 ## Decision Rules

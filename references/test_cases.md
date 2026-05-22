@@ -1,0 +1,89 @@
+# Test Cases
+
+Use these cases to test whether the skill performs sentence-level polishing without changing scientific meaning or evidence strength.
+
+## TC-01: Plain syntax
+
+Input:
+Mineral dissolution widely occurs in natural and engineering processes.
+
+Expected behavior:
+Improve word order only. Do not add mechanisms, pore-network language, or manuscript storyline.
+
+Acceptable revision:
+Mineral dissolution occurs widely in natural and engineered systems.
+
+## TC-02: Overclaim
+
+Input:
+These results prove that NMR T2 evolution robustly diagnoses dissolution mechanisms in porous media.
+
+Expected behavior:
+Downgrade `prove` and `robustly diagnoses`; preserve NMR T2 and dissolution context.
+
+## TC-03: Invented compound
+
+Input:
+This structure-signal framework reveals a connectivity-breakthrough nexus during dissolution.
+
+Expected behavior:
+Rewrite invented compounds as plain relations. Do not create a new named framework.
+
+## TC-04: Undefined term
+
+Input:
+The pore-coupling index increases during the intermediate stage.
+
+Expected behavior:
+If the definition is available, define `pore-coupling index`; otherwise mark `author-confirm`.
+
+## TC-05: Decorative vocabulary
+
+Input:
+The model elucidates the intricate mechanisms that facilitate channel development.
+
+Expected behavior:
+Replace decorative verbs with direct verbs only if meaning is preserved.
+
+## TC-06: Scope preservation
+
+Input:
+In the simulations, permeability increases under high injection rates, suggesting a transition toward channeling.
+
+Expected behavior:
+Preserve `In the simulations` and `suggesting`; do not turn the statement into a general field-scale claim.
+
+## TC-07: Protected content
+
+Input:
+At 25% dissolution, the vug contribution accounts for 73.2% and increases to 90.5% at 50% dissolution (Figure 2h).
+
+Expected behavior:
+Preserve all values, percentages, and figure reference.
+
+## TC-08: Heavy nominalization
+
+Input:
+The implementation of segmentation was conducted to enable the calculation of the flow focusing index.
+
+Expected behavior:
+Convert nominalizations to direct method verbs.
+
+Acceptable revision:
+We segment the medium to calculate the flow focusing index.
+
+## TC-09: Mechanism addition risk
+
+Input:
+The T2 peak shifts to longer relaxation times.
+
+Expected behavior:
+Do not add a mechanism such as pore enlargement unless the source text already states it.
+
+## TC-10: Comparison baseline
+
+Input:
+Compared with the low-Da case, the high-Da case shows stronger inlet-localized dissolution.
+
+Expected behavior:
+Preserve both compared cases and the direction of contrast.
