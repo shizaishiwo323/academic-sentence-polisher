@@ -40,6 +40,20 @@ Not allowed in this stage:
 | `own_manuscript_rule_cards_draft.md` | Stores 8-10 draft local rules from safe patterns | Created for Step 2+ |
 | `modification_log_migration_notes.md` | Records how raw log entries may or may not migrate | This file |
 
+## Files Not to Touch in Step 2+
+
+During Step 2+ material cleaning, do not edit:
+
+- `SKILL.md`
+- `dash_policy.md`
+- `overclaim_downgrade_table.md`
+- `simple_word_replacements.md`
+- `terminology_definition_rules.md`
+- `validation_checklist.md`
+- `test_cases.md`
+
+These files belong to later stages. Step 2+ should only clean and label material from the author's manuscript modification history.
+
 ## Source Group Mapping
 
 ### Learnable Local Expression Samples

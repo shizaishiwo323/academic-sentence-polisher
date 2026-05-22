@@ -12,6 +12,10 @@ Bad pattern: `from X to Y and back to Z`
 Preferred local pattern: `from X to Y, then back to Z`  
 Rule: When a sentence already contains a sequence, use `then` or `followed by` to mark temporal progression.  
 Guardrail: Do not add a new stage, process endpoint, or causal mechanism.
+Do not apply when:
+- the sentence does not already contain a temporal sequence;
+- the added connector would imply a new causal order;
+- the stage order is uncertain or needs author confirmation.
 
 ## OWN-I-006: Replace vague literature subjects with concrete study types
 
@@ -21,6 +25,10 @@ Bad pattern: `Extensive efforts have identified...`
 Preferred local pattern: `Extensive experimental and numerical studies have identified...`  
 Rule: Replace vague subjects with concrete study types when the original sentence already names the evidence sources.  
 Guardrail: Do not broaden the literature scope or add methods/citations.
+Do not apply when:
+- the original sentence does not identify the study types;
+- the concrete subject would require a literature judgment;
+- the replacement would add methods, systems, or citations.
 
 ## OWN-I-007: Use `show how` only for supported mechanism relations
 
@@ -30,6 +38,10 @@ Bad pattern: `show that X produces Y` when the point is process relation.
 Preferred local pattern: `show how X produces Y`  
 Rule: Use `show how` to emphasize a process relation only when the cited or surrounding text already supports that mechanism.  
 Guardrail: If the mechanism support is unclear, keep `show that` or mark `author-confirm`.
+Do not apply when:
+- the sentence only reports a finding rather than a process;
+- the cited work has not been checked for mechanism support;
+- `show how` would make the claim sound more causal than the original.
 
 ## OWN-I-003: Compress repeated regime descriptions with direct verbs
 
@@ -39,6 +51,10 @@ Bad pattern: repeated `giving rise to`; redundant phrases such as `approximately
 Preferred local pattern: direct verbs such as `localizes`, `focuses flow`, `forms`, and `expands`.  
 Rule: Replace repeated template phrases with direct physical verbs when the process is already explicit.  
 Guardrail: Do not delete necessary regime distinctions, citations, or comparison conditions.
+Do not apply when:
+- the direct verb would add a mechanism not present in the source;
+- the sentence contains protected regime definitions or citation-dependent claims;
+- compression would remove necessary conditions or distinctions.
 
 ## OWN-M-002: Use restrained active voice for methods
 
@@ -48,6 +64,10 @@ Bad pattern: `A ... model ... was used to simulate...` with long inserted proven
 Preferred local pattern: `We use X based on Y to simulate Z.`  
 Rule: In Methods, a restrained `We use...` construction can make model, source, and purpose clearer.  
 Guardrail: Do not alter model capability, provenance, governing assumptions, or citations.
+Do not apply when:
+- the manuscript or journal requires passive methods style;
+- the sentence reports a procedure performed by a tool rather than the authors;
+- active voice would obscure model provenance or assumptions.
 
 ## OWN-M-008: Clarify module handoff with destination and attached data
 
@@ -57,6 +77,10 @@ Bad pattern: `exported ... for NMR simulation module, together with...`
 Preferred local pattern: `were exported to the NMR simulation module alongside...`  
 Rule: For workflow handoffs, state the exported object, destination module, and associated metadata clearly.  
 Guardrail: Do not add, remove, or rename exported data items.
+Do not apply when:
+- the destination module is not stated in the source;
+- the list of exported data items is incomplete or uncertain;
+- the rewrite would change workflow order.
 
 ## OWN-R-007: Replace template phrases with direct result verbs
 
@@ -66,6 +90,10 @@ Bad pattern: `..., giving rise to a transient bimodal feature...`
 Preferred local pattern: `..., producing a transient bimodal feature...`  
 Rule: When the causal relation is already clear, replace repeated template phrases such as `giving rise to` with direct verbs such as `producing`, `forming`, or `leading to`.  
 Guardrail: Do not add a new causal mechanism. Do not strengthen the causal relation.
+Do not apply when:
+- the causal relation is uncertain;
+- the original phrase is part of a quoted or standard expression;
+- the replacement would make the process sound more direct than the evidence supports.
 
 ## OWN-R-008: Replace unclear stage labels only with known values
 
@@ -75,6 +103,10 @@ Bad pattern: `second displayed stage`, `third stage`
 Preferred local pattern: `25\% dissolution`, `50\% dissolution`  
 Rule: If a figure or source text already gives exact stage values, use them instead of relative display labels.  
 Guardrail: Never invent percentages, times, values, or figure labels.
+Do not apply when:
+- exact stage values are not provided in the source;
+- the displayed stage is intentionally tied to figure layout;
+- replacing the label would require interpreting the figure or raw data.
 
 ## OWN-R-013: Put compared regimes in subject position
 
@@ -84,6 +116,10 @@ Bad pattern: `The tortuosity trajectories for the channeling and wormholing regi
 Preferred local pattern: `Channeling and wormholing show..., but they differ...`  
 Rule: When a sentence compares regimes, put the compared regimes or objects in subject position.  
 Guardrail: Preserve all variables, values, comparison baselines, and interpretation strength.
+Do not apply when:
+- the comparison baseline would become less clear;
+- the sentence is mainly defining a metric rather than comparing regimes;
+- moving the subject would require deleting values, variables, or qualifiers.
 
 ## OWN-A-009: Downgrade complete diagnostic claims to bounded indicators
 
@@ -93,6 +129,10 @@ Bad pattern: `establishes NMR $T_2$ evolution as a quantitative diagnostic of di
 Preferred local pattern: `quantitative NMR signatures as diagnostic indicators for tracking dissolution dynamics`  
 Rule: If evidence supports signal tracking but not full mechanism diagnosis, use bounded indicator language.  
 Guardrail: Do not weaken or strengthen the scientific conclusion beyond the available evidence; mark `author-confirm` if the claim strength is uncertain.
+Do not apply when:
+- the original evidence actually establishes the stronger diagnostic claim;
+- the author wants to preserve the stronger claim;
+- downgrading would change the intended conclusion rather than expression.
 
 ## Draft Status
 

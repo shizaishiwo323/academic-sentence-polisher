@@ -14,6 +14,8 @@ It does not provide paragraph-level rewriting rules. It does not teach the skill
 - `undefined_term`: central term is introduced without a safe definition.
 - `heavy_nominalization`: noun chain hides the action.
 - `stage_unclear`: temporal or stage relation is unclear.
+- `clarify_causal_link`: causal or process relation is under-specified.
+- `standard_term`: wording should follow common academic or disciplinary usage.
 - `latex_risk`: LaTeX, variables, citations, labels, or units must be protected.
 - `typo_or_intermediate_draft`: teacher/intermediate version contains spelling, spacing, or grammar errors.
 - `out_of_scope_rewrite`: revision changes title, storyline, paragraph function, evidence chain, mechanism, literature bridge, or technical definition.
@@ -30,132 +32,192 @@ Do not import these samples directly into `SKILL.md`. Use them first as a guardr
 
 ## NEG-001: Temporal sequence needs a light connector
 
+Sample type: safe-local-example  
+Auto-fix status: allowed  
 Source ID: A-005  
-Original or source signal: `from a single peak to separated peaks and back to one peak`  
-Teacher/local version: `from a single peak to separated peaks, then back to one peak`  
+Original:
+Face dissolution evolves from a single peak to separated peaks and back to one peak as coupling weakens and the matrix is consumed.
+
+Safe local correction:
+Face dissolution evolves from a single peak to separated peaks, then back to one peak as coupling weakens and the matrix is consumed.
+
 Problem labels: `stage_unclear`, `template_phrase`  
-Safe local correction: Add `then` or `followed by` when the temporal order is already present.  
 May learn: Use a light connector to clarify sequence.  
 Must not learn: Do not add a new stage, mechanism, or process endpoint.  
 Scope: sentence-level.
 
 ## NEG-002: Diagnostic claim too strong
 
+Sample type: safe-local-example  
+Auto-fix status: cautious  
 Source ID: A-009  
-Original or source signal: `establishes NMR $T_2$ evolution as a quantitative diagnostic of dissolution mechanisms`  
-Teacher/local version: `quantitative NMR signatures as diagnostic indicators for tracking dissolution dynamics`  
+Original:
+Supported by flow-field tortuosity, this physics-based interpretation establishes NMR $T_2$ evolution as a quantitative diagnostic of dissolution mechanisms.
+
+Safe local correction:
+These results establish quantitative NMR signatures as diagnostic indicators for tracking dissolution dynamics.
+
 Problem labels: `overclaim`, `latex_risk`  
-Safe local correction: Downgrade a full diagnostic claim to an indicator/tracking claim when evidence is local.  
 May learn: Use `diagnostic indicators for tracking...` when the text supports indicators rather than complete mechanism diagnosis.  
 Must not learn: Do not strengthen NMR or $T_2$ claims beyond the evidence.  
 Scope: sentence-level with evidence-strength control.
 
 ## NEG-003: Repeated regime description is overloaded
 
+Sample type: safe-local-example  
+Auto-fix status: cautious  
 Source ID: I-003  
-Original or source signal: repeated `giving rise to`; `approximately throughout the entire domain`; multiple regime sentences.  
-Teacher/local version: compressed regime descriptions using `localizes`, `focus flow`, `form wormholes`, and `whereas`.  
+Original:
+When the reaction is much slower than transport, the reactant penetrates approximately throughout the entire domain, leading to uniform dissolution of the pore structure \cite{rroded_2020_reactive}. When transport is significantly slower than reaction, the dissolution pattern manifests as face dissolution, which is confined to the inlet pores, giving rise to a distinct progressing front \cite{cohen_2008_from}. As injection rates increase, advection and reaction dominate over diffusion. Consequently, reactive-infiltration instabilities emerge, giving rise to wormholes \cite{fredd_1998_influence,Wang_2022}. In the channeling regime, preferential flow paths rapidly widen along their entire trajectory \cite{menke_2016_reservoir}.
+
+Safe local correction:
+When reaction is much slower than transport, the reactants penetrate the entire domain, leading to uniform dissolution \cite{rroded_2020_reactive}. When transport is significantly slower than reaction, dissolution localizes near the inlet as a progressing face-dissolution front \cite{cohen_2008_from}. At higher injection rates, reactive-infiltration instabilities focus flow and form wormholes \cite{fredd_1998_influence,Wang_2022}, whereas the channeling regime rapidly expands preferential flow paths along their entire trajectory \cite{menke_2016_reservoir}.
+
 Problem labels: `template_phrase`, `decorative_verb`, `heavy_nominalization`  
-Safe local correction: Remove redundant degree words and replace repeated template phrasing with direct verbs.  
 May learn: Compress repeated explanatory structures while preserving regime distinctions.  
 Must not learn: Do not delete necessary regime boundaries, citations, or physical contrasts.  
 Scope: sentence-level to local multi-sentence compression.
 
 ## NEG-004: Vague literature subject
 
+Sample type: safe-local-example  
+Auto-fix status: allowed  
 Source ID: I-006  
-Original or source signal: `Extensive efforts have identified...`  
-Teacher/local version: `Extensive experimental and numerical studies have identified...`  
+Original:
+Extensive efforts have identified dissolution regimes and their transition boundaries through acidizing experiments, Darcy- and pore-scale simulations, and time-lapse X-ray microtomography \cite{fredd_1998_influence,Golfier2002,hoefner_1988_pore,Menke2015EST,menke_2016_reservoir,Menke2018ChemGeol,Ott2015,Yang2020}.
+
+Safe local correction:
+Extensive experimental and numerical studies have identified dissolution regimes and their transition boundaries using acidizing experiments, Darcy- and pore-scale simulations, and time-lapse X-ray microtomography (µCT) \cite{fredd_1998_influence,Golfier2002,hoefner_1988_pore,Menke2015EST,menke_2016_reservoir,Menke2018ChemGeol,Ott2015,Yang2020}.
+
 Problem labels: `vague_subject`  
-Safe local correction: Replace vague subjects with concrete study types when the source text already lists those types.  
 May learn: Prefer concrete literature subjects over generic `efforts`.  
 Must not learn: Do not broaden the literature scope or add methods not present in the sentence.  
 Scope: phrase-level.
 
 ## NEG-005: Mechanism relation needs cautious connector
 
+Sample type: safe-local-example  
+Auto-fix status: cautious  
 Source ID: I-007  
-Original or source signal: `show that transport-reaction competition... produce...`  
-Teacher/local version: `show how transport-reaction competition... produce...`  
+Original:
+These studies show that transport-reaction competition and initial pore heterogeneity produce uniform dissolution, face dissolution, wormholing, and channeling \cite{Menke2023SciRep,Szaweo2024}.
+
+Safe local correction:
+These studies show how transport-reaction competition and initial pore heterogeneity produce uniform dissolution, face dissolution, wormholing, and channeling \cite{Menke2023SciRep,Szaweo2024}.
+
 Problem labels: `clarify_causal_link`  
-Safe local correction: Use `show how` only when the cited studies genuinely explain a process.  
 May learn: Clarify mechanism relation with a small connector change.  
 Must not learn: Do not turn a result statement into a mechanism explanation without support.  
 Scope: phrase-level; author-confirm if mechanism support is unclear.
 
 ## NEG-006: Method sentence too passive and inserted
 
+Sample type: safe-local-example  
+Auto-fix status: allowed  
 Source ID: M-002  
-Original or source signal: `A two-dimensional... model ... was used to simulate...`  
-Teacher/local version: `We use an open source two-dimensional... model... to simulate...`  
+Original:
+A two-dimensional pore-scale reactive transport model (RTM) developed from RTSPHEM, an open-source simulation toolkit from FAU Erlangen-Nürnberg, was used to simulate acid-driven calcium carbonate dissolution \cite{HyPHM,grttner_2020_efficiency,ray_2019_numerical}.
+
+Safe local correction:
+We use an open-source two-dimensional pore-scale reactive transport model (RTM) based on the RTSPHEM simulation toolkit (FAU Erlangen-Nürnberg) to simulate acid-driven calcium carbonate dissolution \cite{HyPHM,grttner_2020_efficiency,ray_2019_numerical}.
+
 Problem labels: `heavy_nominalization`, `latex_risk`  
-Safe local correction: Use restrained active voice in methods when it preserves model capability and provenance.  
 May learn: `We use X based on Y to simulate Z`.  
 Must not learn: Do not alter model capability, provenance, citations, or governing assumptions.  
 Scope: sentence-level methods polishing.
 
 ## NEG-007: Parameter-introduction wording
 
+Sample type: safe-local-example  
+Auto-fix status: cautious  
 Source ID: M-005  
-Original or source signal: `parameterised by the P\'{e}clet number and Damk\"{o}hler number`  
-Teacher/local version: `characterized by the P\'{e}clet number and Damk\"{o}hler number`  
+Original:
+The competition between transport and reaction is parameterised by the P\'{e}clet number and Damk\"{o}hler number:
+
+Safe local correction:
+The transport-reaction competition is characterized by the P\'{e}clet number and Damk\"{o}hler number:
+
 Problem labels: `latex_risk`, `standard_term`  
-Safe local correction: Use common parameter-introduction wording when the definition is unchanged.  
 May learn: `is characterized by` for introducing dimensionless numbers.  
 Must not learn: Do not change Pe/Da definitions, equations, spelling commands, or technical meaning.  
 Scope: phrase-level.
 
 ## NEG-008: Module handoff phrasing
 
+Sample type: safe-local-example  
+Auto-fix status: allowed  
 Source ID: M-008  
-Original or source signal: `exported ... for NMR simulation module, together with...`  
-Teacher/local version: `were exported to the NMR simulation module alongside...`  
+Original:
+At each sampling step, the reactive-transport simulation exported the pore-space and solid masks for NMR simulation module, together with geometric and hydraulic indices, including porosity, solid--liquid interfacial area, grain volume, equivalent permeability, injected pore volumes, and flow-field tortuosity (Text S3).
+
+Safe local correction:
+At each sampling step, the pore-space and solid masks were exported to the NMR simulation module alongside geometric and hydraulic indices, including porosity, solid--liquid interfacial area, grain volume, equivalent permeability, injected pore volumes, and flow-field tortuosity (Text S3).
+
 Problem labels: `template_phrase`, `latex_risk`  
-Safe local correction: Use `exported to... alongside...` for module handoff sentences.  
 May learn: Clarify object, destination, and attached data.  
 Must not learn: Do not add, remove, or rename data products.  
 Scope: sentence-level.
 
 ## NEG-009: Heading capitalization
 
+Sample type: safe-local-example  
+Auto-fix status: cautious  
 Source ID: R-002  
-Original or source signal: `\subsection{NMR $T_2$ Response from Dissolution patterns}`  
-Teacher/local version: `\subsection{NMR $T_2$ Response from Dissolution Patterns}`  
+Original:
+\subsection{NMR $T_2$ Response from Dissolution patterns}\label{sec:res-nmr}
+
+Safe local correction:
+\subsection{NMR $T_2$ Response from Dissolution Patterns}\label{sec:res-nmr}
+
 Problem labels: `latex_risk`  
-Safe local correction: Fix title case if the journal/manuscript style requires it.  
 May learn: Treat heading capitalization as formatting, not content.  
 Must not learn: Do not rewrite section titles or change labels during sentence polishing.  
 Scope: format-level only.
 
 ## NEG-010: Template phrase in result mechanism
 
+Sample type: safe-local-example  
+Auto-fix status: allowed  
 Source ID: R-007  
-Original or source signal: `giving rise to a transient bimodal feature in the $T_2$ distribution`  
-Teacher/local version: `producing a transient bimodal feature in the $T_2$ distribution`  
+Original:
+As flow focuses into this pathway, the velocity contrast between the local matrix and the main channel increases, giving rise to a transient bimodal feature in the $T_2$ distribution (Figure~\ref{fig:fig2}e).
+
+Safe local correction:
+As flow becomes focused into this pathway, the velocity contrast between the local matrix and the main channel increases, producing a transient bimodal feature in the $T_2$ distribution (Figure~\ref{fig:fig2}e).
+
 Problem labels: `template_phrase`, `latex_risk`  
-Safe local correction: Replace repeated `giving rise to` with `producing`, `forming`, or `leading to` when causality is already stated.  
 May learn: Prefer direct result verbs for local physical changes.  
 Must not learn: Do not add a new causal mechanism or change the $T_2$ figure reference.  
 Scope: sentence-level.
 
 ## NEG-011: Stage labels should use exact values only when present
 
+Sample type: safe-local-example  
+Auto-fix status: cautious  
 Source ID: R-008  
-Original or source signal: `second displayed stage`, `third stage`, `73.2\%`, `90.5\%`, `Figure~\ref{fig:fig2}h`  
-Teacher/local version: `25\% dissolution`, `50\% dissolution`; values and figure reference preserved.  
+Original:
+The decomposed vug contribution already accounts for 73.2\% at the second displayed stage and 90.5\% at the third stage (Figure~\ref{fig:fig2}h). Over the same interval, the matrix-pore fraction decreases from 26.8\% to 9.5\%.
+
+Safe local correction:
+The decomposed vug contribution already accounts for 73.2\% at 25\% dissolution and increases to 90.5\% at 50\% dissolution (Figure~\ref{fig:fig2}h), while the matrix-pore fraction decreases from 26.8\% to 9.5\%.
+
 Problem labels: `stage_unclear`, `latex_risk`  
-Safe local correction: Replace relative stage labels with exact stage values only when the source already provides them.  
 May learn: Use concrete stage values and `while` for synchronized changes.  
 Must not learn: Do not invent stage percentages or alter values, units, or figure labels.  
 Scope: sentence-level; protected technical content.
 
 ## NEG-012: Abstract comparison subject
 
+Sample type: safe-local-example  
+Auto-fix status: cautious  
 Source ID: R-013  
-Original or source signal: `The tortuosity trajectories ... quantify the timing contrast in channel establishment.`  
-Teacher/local version: `Channeling and wormholing show lower tortuosity earlier...`  
+Original:
+The tortuosity trajectories for the channeling and wormholing regimes quantify the timing contrast in channel establishment.
+
+Safe local correction:
+Channeling and wormholing show lower tortuosity earlier, but they differ in how hydraulic connectivity is established.
+
 Problem labels: `heavy_nominalization`, `latex_risk`  
-Safe local correction: Move the compared regimes into subject position.  
 May learn: Make comparison subjects concrete.  
 Must not learn: Do not change the comparison, values, or hydraulic interpretation.  
 Scope: sentence-level.
@@ -164,6 +226,8 @@ Scope: sentence-level.
 
 ## NEG-013: Term definition pattern only
 
+Sample type: partial-learning-only  
+Auto-fix status: author-confirm  
 Source ID: I-011  
 Original or source signal: multimodal pore systems and $T_2$ peak overlap.  
 Teacher/local version: introduces `pore coupling` with `(here referred to as pore coupling)`.  
@@ -175,6 +239,8 @@ Scope: partial-learning-only.
 
 ## NEG-014: Regime comparison pattern only
 
+Sample type: partial-learning-only  
+Auto-fix status: author-confirm  
 Source ID: A-006  
 Original or source signal: wormholing and channeling compared with `whereas`.  
 Teacher/local version: adds `followed by rapid peak merging`.  
@@ -186,6 +252,8 @@ Scope: partial-learning-only.
 
 ## NEG-015: Deleting misplaced content is not normal sentence polishing
 
+Sample type: out-of-scope-guardrail  
+Auto-fix status: forbidden  
 Source ID: R-015  
 Original or source signal: breakthrough hierarchy paragraph ends with segmented $T_2$ profiles.  
 Teacher/local version: removes the segmented profile sentence.  
@@ -199,6 +267,8 @@ Scope: out-of-scope guardrail.
 
 ## NEG-016: Title rewrite changes manuscript positioning
 
+Sample type: out-of-scope-guardrail  
+Auto-fix status: forbidden  
 Source ID: T-001  
 Original or source signal: title centered on `Pore Coupling During Mineral Dissolution`.  
 Teacher/local version: title centered on `Quantitative Nuclear Magnetic Resonance Signatures`.  
@@ -210,6 +280,8 @@ Scope: out-of-scope.
 
 ## NEG-017: Abstract opening scope rewrite
 
+Sample type: out-of-scope-guardrail  
+Auto-fix status: forbidden  
 Source ID: A-001  
 Original or source signal: `reorganizes pore networks into... regimes`.  
 Teacher/local version: `through spatially and temporally variable pathways`.  
@@ -221,6 +293,8 @@ Scope: out-of-scope.
 
 ## NEG-018: Abstract research question shift
 
+Sample type: out-of-scope-guardrail  
+Auto-fix status: forbidden  
 Source ID: A-002  
 Original or source signal: `interpret transient ... $T_2$ distributions as signatures...`  
 Teacher/local version: `test whether quantitative ... signatures can diagnose...`  
@@ -232,6 +306,8 @@ Scope: out-of-scope.
 
 ## NEG-019: New method-framework sentence
 
+Sample type: out-of-scope-guardrail  
+Auto-fix status: forbidden  
 Source ID: A-003  
 Original or source signal: no independent method-framework sentence.  
 Teacher/local version: adds coupled reactive transport simulations and NMR forward modeling.  
@@ -243,6 +319,8 @@ Scope: out-of-scope.
 
 ## NEG-020: Abstract result subject changes evidence chain
 
+Sample type: out-of-scope-guardrail  
+Auto-fix status: forbidden  
 Source ID: A-004  
 Original or source signal: permeability breakthrough controlled by matrix-vug coupling.  
 Teacher/local version: simulated $T_2$ pathways control dissolution progress wording.  
@@ -254,6 +332,8 @@ Scope: out-of-scope.
 
 ## NEG-021: MVC source and validation target added
 
+Sample type: out-of-scope-guardrail  
+Auto-fix status: forbidden  
 Source ID: A-007  
 Original or source signal: MVC index shows earlier coupling in channeling.  
 Teacher/local version: MVC index from $T_2$ spectra and comparison with tortuosity.  
@@ -265,6 +345,8 @@ Scope: out-of-scope.
 
 ## NEG-022: Evidence chain expanded
 
+Sample type: out-of-scope-guardrail  
+Auto-fix status: forbidden  
 Source ID: A-008  
 Original or source signal: `establishes NMR $T_2$ evolution as... diagnostic`.  
 Teacher/local version: adds matrix-vug exchange, tortuosity reduction, dissolution efficiency, and breakthrough.  
@@ -276,6 +358,8 @@ Scope: out-of-scope.
 
 ## NEG-023: Introduction opening adds new examples and references
 
+Sample type: out-of-scope-guardrail  
+Auto-fix status: forbidden  
 Source ID: I-001  
 Original or source signal: natural and engineering processes with selected examples.  
 Teacher/local version: adds flow/transport evolution, biological carbonate dissolution, and geological carbon storage.  
@@ -287,6 +371,8 @@ Scope: out-of-scope.
 
 ## NEG-024: Existing-method limitation paragraph rewritten
 
+Sample type: out-of-scope-guardrail  
+Auto-fix status: forbidden  
 Source ID: I-008  
 Original or source signal: visual/image-derived descriptions, micro-CT limitations, flow-distribution metrics.  
 Teacher/local version: rewrites limitations and field-setting accessibility.  
@@ -298,6 +384,8 @@ Scope: out-of-scope.
 
 ## NEG-025: Geophysical bridge added
 
+Sample type: out-of-scope-guardrail  
+Auto-fix status: forbidden  
 Source ID: I-009  
 Original or source signal: field-applicable framework lacking.  
 Teacher/local version: adds geophysical monitoring bridge and citations.  
@@ -309,6 +397,8 @@ Scope: out-of-scope.
 
 ## NEG-026: NMR method positioning changed
 
+Sample type: out-of-scope-guardrail  
+Auto-fix status: forbidden  
 Source ID: I-010  
 Original or source signal: low-field NMR characterization and $T_1$/$T_2$ uses.  
 Teacher/local version: positions NMR among geophysical methods and adds literature.  
@@ -320,6 +410,8 @@ Scope: out-of-scope.
 
 ## NEG-027: NMR gap rewritten
 
+Sample type: out-of-scope-guardrail  
+Auto-fix status: forbidden  
 Source ID: I-012  
 Original or source signal: missing dynamic NMR-interpretable metric and forward-modeling framework.  
 Teacher/local version: rewrites gap and need for framework.  
@@ -331,6 +423,8 @@ Scope: out-of-scope.
 
 ## NEG-028: Repeated physical explanation commented out
 
+Sample type: out-of-scope-guardrail  
+Auto-fix status: forbidden  
 Source ID: I-013  
 Original or source signal: paragraph explains $T_2$ evolution and matrix--vug coupling.  
 Teacher/local version: whole block commented out.  
@@ -342,6 +436,8 @@ Scope: out-of-scope.
 
 ## NEG-029: Results summary expanded with literature comparison
 
+Sample type: out-of-scope-guardrail  
+Auto-fix status: forbidden  
 Source ID: R-009  
 Original or source signal: summary of decomposed peaks across regimes.  
 Teacher/local version: adds previous NMR studies, framework gap, and reviewer-style note.  
@@ -353,6 +449,8 @@ Scope: out-of-scope.
 
 ## NEG-030: New tortuosity/NMR literature paragraph
 
+Sample type: out-of-scope-guardrail  
+Auto-fix status: forbidden  
 Source ID: R-014  
 Original or source signal: no independent literature comparison paragraph.  
 Teacher/local version: adds tortuosity and NMR literature comparison.  
@@ -366,6 +464,8 @@ Scope: out-of-scope.
 
 ## NEG-031: Reaction parameter definition corrected
 
+Sample type: technical-author-confirm  
+Auto-fix status: author-confirm  
 Source ID: M-004  
 Original or source signal: `$k_{\mathrm{TST}}$ is the surface reaction rate constant`.  
 Teacher/local version: `$k_{\mathrm{TST}}$ is an effective dissolution flux coefficient`; `\gamma c_{\mathrm{H}^+}` is dimensionless activity term.  
@@ -377,6 +477,8 @@ Scope: out-of-scope technical correction.
 
 ## NEG-032: Parameter sweep explanation expanded
 
+Sample type: technical-author-confirm  
+Auto-fix status: author-confirm  
 Source ID: M-006  
 Original or source signal: Pe/Da meanings and parameter map.  
 Teacher/local version: expands parameter control, fixed parameters, citations, and units.  
@@ -388,6 +490,8 @@ Scope: out-of-scope technical content.
 
 ## NEG-033: Benchmark evidence expanded
 
+Sample type: technical-author-confirm  
+Auto-fix status: author-confirm  
 Source ID: M-009  
 Original or source signal: benchmark against microfluidic calcite dissolution experiment.  
 Teacher/local version: adds normalized porosity-growth comparison, 4.26 h/4.28 h, validation language.  
@@ -399,6 +503,8 @@ Scope: out-of-scope technical content.
 
 ## NEG-034: Equation correction
 
+Sample type: technical-author-confirm  
+Auto-fix status: author-confirm  
 Source ID: M-012  
 Original or source signal: `\frac{1}{T_{1,2}} = ...`  
 Teacher/local version: `\frac{1}{T_{2}} = ...`  
@@ -410,6 +516,8 @@ Scope: out-of-scope technical correction.
 
 ## NEG-035: Inversion-consistency sentence added
 
+Sample type: technical-author-confirm  
+Auto-fix status: author-confirm  
 Source ID: M-016  
 Original or source signal: definition of $M_{xy}(t)$, $M_0$, $f_{2i}$, and $\sum_i f_{2i}=1`.  
 Teacher/local version: adds consistent $T_2$ inversion settings and processing artifact control.  
@@ -421,6 +529,8 @@ Scope: out-of-scope technical content.
 
 ## NEG-036: Implementation details expanded
 
+Sample type: technical-author-confirm  
+Auto-fix status: author-confirm  
 Source ID: M-017  
 Original or source signal: details of Bloch--Torrey equations and boundary conditions in Text S4.  
 Teacher/local version: expands finite-element discretization, mesh regeneration, settings, and Table S2.  
@@ -434,6 +544,8 @@ Scope: out-of-scope technical content.
 
 ## NEG-037: Intermediate abstract-action wording
 
+Sample type: negative-only  
+Auto-fix status: forbidden  
 Source ID: I-014  
 Original or source signal: combines RTM with NMR module to infer pore coupling.  
 Teacher/local version contains: `a integrated`, `transport - NMR`, `time varying`.  
@@ -445,6 +557,8 @@ Scope: negative-only.
 
 ## NEG-038: Intermediate output sentence has spacing error
 
+Sample type: negative-only  
+Auto-fix status: forbidden  
 Source ID: I-015  
 Original or source signal: RTM generates representative regimes; NMR module converts geometries into $T_2$ outputs.  
 Teacher/local version contains: `Usingface-dissolution`; `time varying`.  
@@ -456,6 +570,8 @@ Scope: negative-only.
 
 ## NEG-039: Intermediate proxy claim has spacing error
 
+Sample type: negative-only  
+Auto-fix status: forbidden  
 Source ID: I-016  
 Original or source signal: compare spectral evolution with permeability and tortuosity; define MVC.  
 Teacher/local version contains: `proxy forflow pathway`; matrix-vug terminology changes.  
@@ -467,6 +583,8 @@ Scope: negative-only.
 
 ## NEG-040: Results overview has grammar and punctuation errors
 
+Sample type: negative-only  
+Auto-fix status: forbidden  
 Source ID: R-001  
 Original or source signal: Pe/Da parameter map and selected regimes.  
 Teacher/local version contains: `To exam`, stray punctuation, `0.73\%` porosity wording.  
@@ -478,6 +596,8 @@ Scope: negative-only.
 
 ## NEG-041: T2 result entry has spelling and LaTeX errors
 
+Sample type: negative-only  
+Auto-fix status: forbidden  
 Source ID: R-003  
 Original or source signal: inverted $T_2$ spectra, matrix/vug thresholds, Gaussian decomposition.  
 Teacher/local version contains: `relxation`, `seperate`, malformed `100\%\` spacing.  
@@ -489,6 +609,8 @@ Scope: negative-only.
 
 ## NEG-042: Wormholing paragraph has repeated and malformed wording
 
+Sample type: negative-only  
+Auto-fix status: forbidden  
 Source ID: R-006  
 Original or source signal: wormholing $T_2$ broad peak, $\varphi=0.894$, $k/k_0=106.0`, 92.7\%, 7.3\%.  
 Teacher/local version contains: repeated `throughout`, `continous`, `resulting a`, `decreases to7.3\%`, `completedissolution`.  
@@ -500,6 +622,8 @@ Scope: negative-only.
 
 ## NEG-043: CPMG workflow intermediate text has typo
 
+Sample type: negative-only  
+Auto-fix status: forbidden  
 Source ID: M-015  
 Original or source signal: CPMG sequence, $M_{xy}(t)$, $M_0$, $f_{2i}$, Figure~\ref{fig:fig1}c.  
 Teacher/local version contains: `fiinite`, expanded finite-element and boundary-condition process.  
@@ -511,6 +635,8 @@ Scope: negative-only.
 
 ## NEG-044: Module integration sentence has malformed clause
 
+Sample type: negative-only  
+Auto-fix status: forbidden  
 Source ID: M-018  
 Original or source signal: RTM-NMR snapshot export, masks, mesh conversion, CPMG, $T_2$ inversion.  
 Teacher/local version contains: `which CPMG $T_2$ decay signals were simulated`.  
