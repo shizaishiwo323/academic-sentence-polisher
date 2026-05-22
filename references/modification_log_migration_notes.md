@@ -19,6 +19,7 @@ Active executable files:
 Supporting test and validation files:
 
 - `references/test_cases.md`;
+- `references/test_run_log.md`;
 - `references/validation_checklist.md`.
 
 Non-executable traceability files:
@@ -48,6 +49,7 @@ The older extended reference files remain available for traceability and future 
 | `overclaim_downgrade.md` | Controls claim-strength downgrading and prevents overclaiming | Active v0.1 rule table |
 | `simple_word_replacement.md` | Controls fancy-word replacement and nominalization reduction | Active v0.1 rule table |
 | `terminology_definition.md` | Controls first-use definitions and manuscript-specific terms | Active v0.1 rule table |
+| `test_run_log.md` | Records Run 01, Run 02, failure types, rule updates, and v0.1 freeze evidence | Active v0.1 testing file |
 | `negative_samples_from_own_manuscript.md` | Stores negative/caution samples with `Must not learn` guardrails | Traceability and future expansion |
 | `own_manuscript_rule_cards_draft.md` | Stores draft local rules from safe patterns | Traceability and future expansion |
 | `modification_log_migration_notes.md` | Records how raw log entries may or may not migrate | This file |
