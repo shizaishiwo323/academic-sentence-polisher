@@ -18,6 +18,7 @@ Mark a problem only when the sentence can be improved without adding new scienti
 | Heavy nominalization | `the occurrence of`, `the implementation of` | Convert to a direct verb |
 | Rare decorative verb | `elucidate`, `delineate`, `unveil`, `facilitate` | Replace with a simple verb if equally precise |
 | Invented dash compound | `connectivity-breakthrough nexus` | Rewrite as ordinary syntax |
+| New dash compound in the revision | source says `based on pore structure`; revision says `pore-structure-aware` | Reject the revision unless the exact expression is a standard or defined term |
 | Unclear causal jump | observation followed by broad mechanism | Keep observation first and ask for confirmation if mechanism is not explicit |
 | Scope loss | removing `in simulations`, `under these conditions`, `for the tested cases` | Preserve scope markers |
 
@@ -43,6 +44,7 @@ Do not:
 - add a new mechanism to make the sentence sound deeper;
 - add a new citation or literature judgment;
 - create a new named framework;
+- create a new hyphenated, en-dash, or em-dash compound to make the revision sound more academic;
 - replace a precise technical term with a vague simple word;
 - remove uncertainty markers such as `may`, `might`, `could`, `suggests`, or `is consistent with`;
 - remove numerical values, units, variables, citations, or figure references for fluency;
@@ -56,3 +58,4 @@ Before editing, ask:
 2. Can a local edit fix it?
 3. Will the revised sentence preserve evidence strength?
 4. Are all protected technical elements unchanged?
+5. Did the revision avoid new dash-based labels unless they are standard or defined terms?

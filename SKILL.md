@@ -44,6 +44,7 @@ If a requested edit depends on technical truth, mechanism, causality, terminolog
 6. Do not introduce a new term unless the original text already requires it.
 7. Do not change numbers, variables, citations, equations, labels, figure references, or table references.
 8. Do not make the revised sentence substantially longer than the original unless clarity requires it; by default, keep it within about 110% of the original length.
+9. Do not create new hyphenated, en-dash, or em-dash compounds during polishing unless the exact expression is a standard technical term or already defined in the manuscript.
 
 ## Workflow
 
@@ -64,7 +65,7 @@ Before editing, identify and preserve:
 Check whether the sentence contains:
 
 - undefined or unnecessary fancy terms;
-- unnecessary dash compounds;
+- unnecessary, invented, or decorative dash compounds;
 - overclaiming or overly strong adverbs;
 - rare, decorative, or unnatural words;
 - heavy nominalization;
@@ -82,7 +83,20 @@ word replacement > phrase replacement > clause restructuring > sentence splittin
 
 Do not rewrite the whole sentence if replacing one phrase solves the problem. Do not rewrite the whole paragraph unless the user explicitly asks.
 
-### Step 4. Check evidence strength
+### Step 4. Remove AI-like dash compounds
+
+Before finalizing any revision, check whether the polished version contains a new expression joined by a hyphen, en dash, or em dash. If it was not present in the source text and is not a standard technical term, replace it with ordinary syntax.
+
+Use plain wording instead of invented labels:
+
+- `mechanism-aware interpretation` -> `interpretation based on the mechanism`, if the mechanism is stated;
+- `signal-structure bridge` -> `the relation between signal and structure`;
+- `context-sensitive response` -> `a response that depends on context`;
+- em-dash emphasis -> a comma, parentheses, or a separate sentence.
+
+If a compact dash expression may be a professional term but this cannot be confirmed from the source text, keep the meaning in plain wording and mark `author-confirm` if the term itself matters.
+
+### Step 5. Check evidence strength
 
 After editing, check:
 
@@ -94,7 +108,7 @@ After editing, check:
 
 If yes, revise again to restore the original evidence strength.
 
-### Step 5. Produce a concise output
+### Step 6. Produce a concise output
 
 Use the requested output style. If the user does not specify a format, use:
 
@@ -136,6 +150,7 @@ Do not:
 - add novelty claims;
 - add field-scale implications unless already stated;
 - introduce new compound terms;
+- convert plain source wording into a new hyphenated or dash-based label such as `mechanism-aware`, `signal-structure`, `context-sensitive`, or `process-response`;
 - use em dashes for dramatic emphasis;
 - use inflated words such as `revolutionary`, `unprecedented`, `critical`, or `remarkable` unless the evidence explicitly supports them;
 - change `suggests` to `demonstrates`, `indicates` to `proves`, or `may` to an unqualified claim;

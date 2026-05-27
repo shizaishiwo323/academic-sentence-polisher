@@ -103,3 +103,14 @@ Figure 3 demonstrates that the simulated T2 peak shifts to longer relaxation tim
 
 Expected behavior:
 Do not automatically downgrade `demonstrates` if the figure directly supports the observation. Preserve `under the tested conditions`.
+
+## TC-13: Do not create dash-based AI terms
+
+Input:
+The interpretation uses pore structure and flow response to explain the change in T2 signals.
+
+Expected behavior:
+Do not polish the sentence into a new expression such as `pore-structure-aware interpretation`, `flow-response-informed interpretation`, or `structure-signal framework`. Use ordinary syntax unless the compact dash term is a standard or manuscript-defined technical term.
+
+Acceptable revision:
+The interpretation uses pore structure and flow response to explain changes in T2 signals.

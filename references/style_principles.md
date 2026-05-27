@@ -396,7 +396,7 @@ Revision strategy:
 State the relation directly in ordinary syntax.
 
 Do not:
-Invent new dashed terms during polishing.
+Invent new dashed terms during polishing. This is an output gate: if the revision contains a new dash-based label that was not in the source text, replace it with ordinary syntax unless the exact label is a standard or manuscript-defined technical term.
 
 ## 7. Plain Academic Vocabulary
 

@@ -8,6 +8,8 @@ The goal is not to remove all dashes. The goal is to distinguish standard techni
 
 ## General Rule
 
+Default to no new dash compounds. During polishing, a revised sentence must not introduce a new hyphenated, en-dash, or em-dash expression unless the exact expression is a standard technical term in the field or has already been defined in the manuscript.
+
 Keep dash compounds when they are:
 
 - standard technical terms;
@@ -24,7 +26,7 @@ Revise dash compounds when they are:
 - used to make the sentence sound more sophisticated;
 - replaceable by a clearer plain phrase.
 
-Do not create new dash compounds during polishing.
+Do not create new dash compounds during polishing. This is a hard rule, not a style preference. If the source says `interpretation based on pore structure`, do not polish it into `pore-structure-aware interpretation` unless that term is already used as a defined technical term.
 
 ## Always Keep
 
@@ -76,6 +78,9 @@ If several dense compounds appear in one sentence, simplify at least one of them
 | `flow-path optimization` | Implies intentional optimization | `more direct flow pathways`, if supported |
 | `physics-aware interpretation` | Often rhetorical | `interpretation based on the governing physics` |
 | `process-response signature` | Vague unless defined | `response associated with the process` |
+| `mechanism-aware interpretation` | AI-like unless established | `interpretation based on the mechanism`, only if the mechanism is stated |
+| `context-sensitive response` | Often generic | `a response that depends on context` |
+| `structure-function-informed analysis` | Over-compressed unless standard | `analysis informed by structure-function relations`, only if that relation is explicit |
 
 Keep these only if the manuscript defines them or if the compact form is clearly needed.
 
@@ -97,6 +102,7 @@ Keep these only if the manuscript defines them or if the compact form is clearly
 - Use hyphens for compound adjectives when the manuscript uses plain ASCII style: `pore-scale model`.
 - Use en dashes only if the manuscript or journal style already uses them for ranges or paired relations.
 - Avoid em-dash sentence interruptions in formal paper prose; use commas, parentheses, or a separate sentence.
+- Do not use an em dash to make a revised sentence sound more polished, dramatic, or conceptual.
 
 ## Character and LaTeX Compatibility
 
@@ -118,11 +124,23 @@ Do not change dash type, accents, or LaTeX spelling unless the user asks for jou
 
 If a dash compound is not listed above:
 
-1. Ask whether it is a standard technical term.
-2. Ask whether removing the dash changes the meaning.
-3. Ask whether a plain phrase is clearer.
-4. If the compound sounds newly invented or decorative, rewrite it as a plain phrase.
-5. If deciding requires technical knowledge not present in the text, mark `author-confirm`.
+1. Ask whether the exact expression appeared in the source text.
+2. Ask whether it is a standard technical term or a manuscript-defined term.
+3. Ask whether removing the dash changes the meaning.
+4. Ask whether a plain phrase is clearer.
+5. If the compound sounds newly invented or decorative, rewrite it as a plain phrase.
+6. If deciding requires technical knowledge not present in the text, prefer the plain phrase and mark `author-confirm` only when the compact term itself is important.
+
+## Output Gate
+
+Before returning the polished text, scan the revision for:
+
+- new `word-word` compounds;
+- new multi-part compounds such as `signal-structure-transport`;
+- em-dash interruptions;
+- terms ending in `-aware`, `-informed`, `-driven`, `-sensitive`, `-based`, or `-linked` that were not present in the source.
+
+If any item is new and not a standard technical term, revise again using ordinary syntax.
 
 ## Examples
 

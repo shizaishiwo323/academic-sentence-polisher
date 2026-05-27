@@ -16,6 +16,7 @@ The revision passes only if all required checks pass.
 | Scope preserved | Qualifiers such as `in simulations`, `under these conditions`, and `for the tested cases` remain visible |
 | Sentence-level only | No paragraph order, storyline, or content structure is changed |
 | AI smell reduced | At least one expression problem is improved when the original had one |
+| No new dash label | The revision does not introduce new hyphenated, en-dash, or em-dash compounds unless they are standard or defined technical terms |
 | Minimum edit used | The edit is no larger than needed |
 
 ## Protected Content
@@ -43,6 +44,16 @@ Reject or revise if the polished sentence changes:
 - local condition -> general law;
 - simulation result -> field-scale prediction;
 - observation -> mechanism without support.
+
+## Dash-Compound Check
+
+Reject or revise if the polished sentence introduces:
+
+- a new compact label such as `mechanism-aware`, `structure-informed`, `context-sensitive`, or `signal-structure`;
+- a multi-part compound that was not in the source text;
+- an em dash used for emphasis or dramatic contrast.
+
+Keep such wording only when it is a standard professional term or already defined in the manuscript. If uncertain, use ordinary syntax and mark `author-confirm` only when the term itself affects meaning.
 
 ## Output Check
 
