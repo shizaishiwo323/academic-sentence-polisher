@@ -1,61 +1,43 @@
-# AI-Smell Checklist for Academic Sentence Polishing
+# AI-Smell Checklist
 
-Use this checklist to diagnose sentence-level AI-like writing before editing. Apply only to expression. Do not use it to change scientific logic, content, mechanism, or manuscript storyline.
+Use this only for expression-level diagnosis. Do not change scientific logic or evidence to make prose sound less machine-generated.
 
-## Core Rule
+## High-priority signals
 
-Mark a problem only when the sentence can be improved without adding new scientific information. If the fix requires knowing whether a mechanism, term, or claim is scientifically correct, mark `author-confirm`.
-
-## High-Priority Signals
-
-| Signal | Typical pattern | Preferred action |
+| Signal | Risk | Preferred action |
 |---|---|---|
-| Undefined fancy term | `mechanism-diagnostic bridge`, `structure-signal framework` | Define the term if necessary, or replace it with a plain phrase |
-| Decorative intensifier | `critically`, `remarkably`, `fundamentally`, `profoundly` | Delete unless quantified or directly supported |
-| Overstrong claim | `proves`, `confirms`, `establishes`, `ensures` | Downgrade to `shows`, `suggests`, `supports`, or `is consistent with` |
-| Empty contribution phrase | `provides new insights into`, `opens a new avenue` | State the concrete relation, metric, or use case |
-| Long abstract subject | `The establishment of a comprehensive...` | Move the physical object, model, signal, or process to subject position |
-| Heavy nominalization | `the occurrence of`, `the implementation of` | Convert to a direct verb |
-| Rare decorative verb | `elucidate`, `delineate`, `unveil`, `facilitate` | Replace with a simple verb if equally precise |
-| Invented dash compound | `connectivity-breakthrough nexus` | Rewrite as ordinary syntax |
-| New dash compound in the revision | source says `based on pore structure`; revision says `pore-structure-aware` | Reject the revision unless the exact expression is a standard or defined term |
-| Unclear causal jump | observation followed by broad mechanism | Keep observation first and ask for confirmation if mechanism is not explicit |
-| Scope loss | removing `in simulations`, `under these conditions`, `for the tested cases` | Preserve scope markers |
+| undefined conceptual label | sounds technical but has no operational meaning | define it or use plain syntax |
+| decorative intensifier | adds promotion rather than evidence | delete or replace with a number |
+| empty contribution phrase | hides the actual contribution | name the concrete result or capability |
+| heavy nominalization | delays the main action | use a direct verb |
+| long abstract subject | burdens the reader before the verb | use the physical object/process as subject |
+| rare decorative verb | adds style but not precision | use a familiar precise verb |
+| invented dash compound | compresses an unclear relation | rewrite as ordinary syntax |
+| repeated template transition | makes logic appear formulaic | state the actual relation |
+| generic ending | `provides valuable insights` without content | state the bounded implication |
+| scope loss | removes tested conditions or scale | restore the boundary |
 
-## Sentence-Level Diagnosis Labels
+## Common stock phrases to examine
 
-Use these labels in `Main edits` when useful:
+Do not remove automatically, but require a concrete function:
 
-- `undefined-term`
-- `overclaim`
-- `decorative-intensifier`
-- `unnecessary-compound`
-- `heavy-nominalization`
-- `rare-word`
-- `long-subject`
-- `unclear-causal-link`
-- `scope-drift`
-- `technical-content-risk`
+- `It is worth noting that`
+- `plays a crucial role`
+- `provides valuable insights into`
+- `opens new avenues`
+- `a comprehensive understanding`
+- `in today's rapidly evolving`
+- `not only ... but also ...` used for rhetorical emphasis
+- `remarkably`, `fundamentally`, `profoundly`
+- vague `this` or `these findings` with no explicit referent
 
-## Forbidden Fixes
+## Output gate
 
-Do not:
+Before finalizing, ask:
 
-- add a new mechanism to make the sentence sound deeper;
-- add a new citation or literature judgment;
-- create a new named framework;
-- create a new hyphenated, en-dash, or em-dash compound to make the revision sound more academic;
-- replace a precise technical term with a vague simple word;
-- remove uncertainty markers such as `may`, `might`, `could`, `suggests`, or `is consistent with`;
-- remove numerical values, units, variables, citations, or figure references for fluency;
-- turn a sentence-level polish into a paragraph rewrite.
-
-## Quick Pass
-
-Before editing, ask:
-
-1. Is the problem about expression rather than scientific content?
-2. Can a local edit fix it?
-3. Will the revised sentence preserve evidence strength?
-4. Are all protected technical elements unchanged?
-5. Did the revision avoid new dash-based labels unless they are standard or defined terms?
+1. Is every evaluative word supported?
+2. Does every abstract label have a definition?
+3. Is the main scientific actor visible?
+4. Could a stock phrase be replaced by the actual relation?
+5. Did the revision preserve scope and uncertainty?
+6. Did it avoid inventing a mechanism or new named framework?

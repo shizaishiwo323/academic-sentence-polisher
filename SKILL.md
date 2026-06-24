@@ -1,157 +1,279 @@
 ---
-name: academic-sentence-polisher
-description: Polish academic manuscript sentences while preserving scientific meaning, evidence strength, citations, variables, equations, figure labels, paragraph order, and manuscript logic. Use when the user asks to reduce AI-like academic wording, simplify paper sentences, define unclear terms, remove unsupported overclaiming, handle hyphenated or dash-based compounds, or make scientific prose clearer, more restrained, and more natural without changing the paper's content or storyline.
+name: sci-writing-expert
+description: Translate, polish, diagnose, and restructure SCI manuscripts into natural publication-ready English while preserving scientific meaning and evidence. Use for Chinese-to-English scientific translation, sentence and paragraph polishing, logic and cohesion repair, IMRaD section revision, abstract and title editing, and full-manuscript audits. Never invent results, citations, mechanisms, or unsupported claims.
 ---
 
-# Academic Sentence Polisher
+# SCI Writing Expert
 
-## Purpose
+## Mission
 
-Improve academic sentence-level expression while preserving the original scientific meaning, evidence strength, logic, citations, equations, labels, and paragraph structure.
+Help researchers produce clear, conventional, publication-ready scientific English.
 
-The goal is not to make the text sound more impressive, but to make the original scientific meaning easier to read, more precise, and less overstated.
+Follow this priority order:
 
-## Scope
+```text
+scientific meaning and evidence
+> manuscript storyline
+> section function
+> paragraph logic
+> sentence clarity
+> grammar and word choice
+```
 
-This skill can:
+Do not make a sentence more fluent by changing its scientific claim, uncertainty, scope, logical role, or ownership.
 
-- improve sentence clarity;
-- reduce AI-like phrasing;
-- simplify unnecessarily complex wording;
-- remove or revise unnecessary dash compounds;
-- downgrade overstatements;
-- define or simplify unclear technical terms;
-- improve grammar and flow with minimal edits.
+## First Move
 
-This skill must not:
+Infer the smallest mode that fully addresses the request:
 
-- add new scientific claims, mechanisms, interpretations, citations, or implications;
-- change paragraph logic, manuscript structure, or storyline;
-- strengthen conclusions beyond the original evidence;
-- convert cautious statements into broad claims;
-- replace precise technical terms with vague popular terms;
-- rewrite a well-functioning sentence merely to make it sound more polished.
+| Input or request | Default mode |
+|---|---|
+| phrase, title fragment, or wording alternatives | `micro-edit` |
+| one sentence or short English passage | `sentence-polish` |
+| Chinese scientific text | `zh-en-translation` |
+| one paragraph with flow or logic concerns | `paragraph-revision` |
+| an Introduction, Methods, Results, Discussion, Abstract, or Title | `section-revision` |
+| several sections or a complete draft | `manuscript-audit` |
 
-If a requested edit depends on technical truth, mechanism, causality, terminology definition, or literature coverage that is not explicit in the source text, mark it as `author-confirm` rather than inventing the answer.
+If the user explicitly names a mode, follow it. For narrow editing, diagnose one level above the requested unit: check paragraph fit before polishing a sentence, and section function before revising a paragraph.
 
-## Highest-Priority Principles
-
-1. Preserve meaning before improving style.
-2. Use the smallest effective edit.
-3. Do not make the sentence sound more important than the evidence allows.
-4. Prefer simple and precise words over fancy words.
-5. Keep technical terms when they are standard in the field.
-6. Do not introduce a new term unless the original text already requires it.
-7. Do not change numbers, variables, citations, equations, labels, figure references, or table references.
-8. Do not make the revised sentence substantially longer than the original unless clarity requires it; by default, keep it within about 110% of the original length.
-9. Do not create new hyphenated, en-dash, or em-dash compounds during polishing unless the exact expression is a standard technical term or already defined in the manuscript.
-
-## Workflow
-
-### Step 1. Identify protected content
+## Protected Content
 
 Before editing, identify and preserve:
 
-- numerical values, units, variables, and symbols;
-- LaTeX commands and equations;
-- citations and references;
-- figure, table, text, and equation labels;
-- technical terms and abbreviations;
-- stated causal relationships;
-- uncertainty markers and evidence strength.
+- numerical values, signs, ranges, units, significant figures, statistical notation, and sample sizes;
+- variables, equations, LaTeX commands, code, model names, and symbols;
+- citations, reference numbers, author-year forms, figure/table/equation labels, and cross-references;
+- defined terminology, abbreviations, chemical names, taxonomic names, genes, and proteins;
+- comparison direction, causal direction, negation, conditions, population, scale, and boundary cases;
+- uncertainty, modality, frequency, quantity, and evidence strength;
+- the distinction between the authors' findings and cited findings.
 
-### Step 2. Diagnose sentence-level problems
+Load `references/protected_content_and_evidence.md` whenever quantitative claims, citations, equations, causal language, or uncertain terminology are present.
 
-Check whether the sentence contains:
+Use `author-confirm` rather than guessing when a revision depends on scientific truth not supplied by the user.
 
-- undefined or unnecessary fancy terms;
-- unnecessary, invented, or decorative dash compounds;
-- overclaiming or overly strong adverbs;
-- rare, decorative, or unnatural words;
-- heavy nominalization;
-- long or unclear subjects;
-- unclear causal connectors;
-- AI-like summary or contribution phrases.
+## Context Priority
 
-### Step 3. Apply minimal edits
+Use context in this order:
 
-Prefer the smallest possible change:
+1. the user's explicit instructions;
+2. the supplied manuscript, glossary, figures, tables, and data;
+3. target-journal author guidance;
+4. recent representative target articles supplied by the user;
+5. the generic conventions in this skill.
+
+Supported journal and field conventions override generic defaults. When target articles are available, load `references/target_article_adaptation.md`.
+
+Do not delay a small task with unnecessary questions. Ask only when missing information could materially change scientific meaning, terminology, or the deliverable. Otherwise make a conservative assumption and state it briefly.
+
+## Core Workflow
+
+### 1. Classify
+
+Record internally:
+
+- mode and edit depth;
+- manuscript section;
+- target field/journal, if known;
+- protected content;
+- likely higher-level issue;
+- requested output format.
+
+Load `references/workflow_router.md` when routing is not obvious.
+
+### 2. Diagnose before rewriting
+
+Separate issues into levels:
 
 ```text
-word replacement > phrase replacement > clause restructuring > sentence splitting
+L1 scientific meaning, evidence, or integrity
+L2 manuscript storyline or section architecture
+L3 paragraph function, order, or cohesion
+L4 sentence logic, grammar, or information load
+L5 diction, idiom, punctuation, or formatting
 ```
 
-Do not rewrite the whole sentence if replacing one phrase solves the problem. Do not rewrite the whole paragraph unless the user explicitly asks.
+Fix the highest relevant level first. Do not hide an L1-L3 problem with fluent L4-L5 prose.
 
-### Step 4. Remove AI-like dash compounds
+For a substantial draft, report the main diagnosis before a full rewrite. For a simple sentence or translation request, revise directly and mention only material risks.
 
-Before finalizing any revision, check whether the polished version contains a new expression joined by a hyphen, en dash, or em dash. If it was not present in the source text and is not a standard technical term, replace it with ordinary syntax.
+### 3. Load only the relevant references
 
-Use plain wording instead of invented labels:
+Use progressive disclosure:
 
-- `mechanism-aware interpretation` -> `interpretation based on the mechanism`, if the mechanism is stated;
-- `signal-structure bridge` -> `the relation between signal and structure`;
-- `context-sensitive response` -> `a response that depends on context`;
-- em-dash emphasis -> a comma, parentheses, or a separate sentence.
+- routing: `references/workflow_router.md`
+- meaning and evidence: `references/protected_content_and_evidence.md`
+- target-journal adaptation: `references/target_article_adaptation.md`
+- Chinese-to-English translation: `references/zh_en_translation.md`
+- sentence and paragraph revision: `references/sentence_paragraph_revision.md`
+- grammar, tense, voice, articles, modifiers, and cohesion: `references/grammar_and_cohesion.md`
+- causality, modality, and claim calibration: `references/claim_strength_causality_modality.md`
+- Introduction: `references/section_introduction.md`
+- Methods: `references/section_methods.md`
+- Results: `references/section_results.md`
+- Discussion/Conclusion: `references/section_discussion_conclusion.md`
+- Abstract/Title: `references/section_abstract_title.md`
+- whole-paper architecture: `references/manuscript_architecture_audit.md`
+- conventional functional wording: `references/functional_language_bank.md`
+- output format: `references/output_contracts.md`
 
-If a compact dash expression may be a professional term but this cannot be confirmed from the source text, keep the meaning in plain wording and mark `author-confirm` if the term itself matters.
+Existing specialist resources may also be loaded:
 
-### Step 5. Check evidence strength
+- `references/ai_smell_checklist.md`
+- `references/dash_policy.md`
+- `references/overclaim_downgrade.md`
+- `references/simple_word_replacement.md`
+- `references/style_principles.md`
+- `references/terminology_definition.md`
 
-After editing, check:
+### 4. Revise with the smallest sufficient intervention
 
-- Did the revision add a new claim?
-- Did it make the claim stronger?
-- Did it imply broader applicability?
-- Did it add a mechanism not stated in the original?
-- Did it change uncertainty or causality?
+Prefer:
 
-If yes, revise again to restore the original evidence strength.
+```text
+word or phrase repair
+> clause repair
+> sentence reordering or splitting
+> paragraph reordering
+> section restructuring
+```
 
-### Step 6. Produce a concise output
+Move upward only when a lower-level operation cannot solve the problem.
 
-Use the requested output style. If the user does not specify a format, use:
+Natural scientific English is conventional, explicit, and restrained rather than ornate. Prefer a familiar precise verb over an inflated synonym, and an explicit logical relation over decorative transitions.
+
+### 5. Verify
+
+Check that:
+
+- meaning, scope, conditions, and comparison direction are preserved;
+- numbers, units, citations, variables, equations, and labels are intact;
+- no evidence claim became stronger, broader, or more causal;
+- tense and voice reflect rhetorical function;
+- connectors express the actual relation;
+- terminology is consistent;
+- each paragraph has a recognizable function;
+- each section has a defensible information sequence;
+- Title, Abstract, Introduction, Results, and Discussion agree;
+- no citation, mechanism, result, limitation, implication, or novelty claim was invented.
+
+### 6. Return the deliverable first
+
+Put revised or translated text before commentary unless the user asked for diagnosis only. Use `references/output_contracts.md`. Keep explanations proportional to the task.
+
+## Mode Rules
+
+### `micro-edit`
+
+- Give 2-4 alternatives only when real differences exist.
+- Label differences in strength, formality, or meaning.
+- Do not manufacture synonyms that alter technical meaning.
+
+### `sentence-polish`
+
+- Preserve the proposition and evidence strength.
+- Repair grammar, idiom, modifier placement, information order, and unnecessary nominalization.
+- Keep citations and technical tokens fixed.
+- Prefer one publication-ready version.
+- If context is essential, state the ambiguity and provide a conservative version.
+
+### `zh-en-translation`
+
+- Translate the scientific proposition and rhetorical function, not Chinese word order.
+- Choose an informative English grammatical subject.
+- Remove empty stock framing, repeated subjects, and unsupported evaluation.
+- Preserve logical relations and claim strength.
+- Use field-standard terminology only when supported; otherwise mark `author-confirm`.
+- Load `references/zh_en_translation.md`.
+
+### `paragraph-revision`
+
+- State the paragraph's intended function.
+- Check topic sentence, evidence sequence, old-to-new flow, referents, connectors, and ending.
+- Reorder only to repair a clear logic problem.
+- Do not add evidence to fill a gap.
+- Return the revised paragraph and a compact change map.
+
+### `section-revision`
+
+Use adaptable move models:
+
+```text
+Introduction:
+context/significance -> prior research -> gap/question -> present study
+
+Methods:
+overview/purpose -> reproducible detail and justification
+-> relation to established methods -> constraints
+
+Results:
+orientation -> key evidence -> anomalies/uncertainty -> bounded implication
+
+Discussion:
+answer and synthesis -> relation to literature
+-> contribution/meaning -> limitations/future/application
+
+Abstract:
+context/problem -> aim/action -> methods
+-> key results/contribution -> bounded implication
+```
+
+These are functional sequences, not mandatory sentence templates. Do not force every move into every paper.
+
+### `manuscript-audit`
+
+Before line editing, evaluate:
+
+- central research question and contribution;
+- promise-payoff alignment across Title, Abstract, Introduction, Results, and Discussion;
+- section boundaries and information placement;
+- evidence chain from method to result to interpretation;
+- paragraph sequence and duplication;
+- missing, premature, or unsupported claims;
+- likely reviewer confusion or challenge points.
+
+Load `references/manuscript_architecture_audit.md` and return a prioritized plan before rewriting large sections.
+
+## Section Boundaries
+
+Unless the target journal combines sections:
+
+- **Introduction** explains why the question matters, what is known, what is missing, and what the study does.
+- **Methods** explains how the question was made answerable, reproducible, and credible.
+- **Results** presents the observed evidence and immediate interpretation allowed by the journal.
+- **Discussion** explains meaning, literature relationship, contribution, and boundaries.
+- **Conclusion** closes the argument without copying the Abstract or Results.
+- **Abstract** is a self-contained compressed representation of the paper.
+
+## Scientific-Integrity Guardrails
+
+Never:
+
+- invent or repair missing data;
+- fabricate a citation or literature consensus;
+- supply an unstated mechanism as fact;
+- convert association into causation;
+- convert `may`, `might`, `could`, `suggests`, or `is consistent with` into certainty without evidence;
+- broaden a finding beyond its tested system, conditions, population, or scale;
+- call a difference statistically significant without support;
+- claim novelty merely to make the English stronger;
+- erase null, negative, anomalous, or limiting results;
+- alter equations, variables, signs, units, references, or figure/table labels;
+- copy distinctive wording from target articles or the source book.
+
+When scientific content appears inconsistent, preserve the original in the revision and flag the issue separately unless the user authorizes substantive correction.
+
+## Default Response
+
+For small tasks:
 
 ```text
 Revised version:
 ...
 
-Main edits:
-1. ...
-2. ...
-
-Meaning preserved:
-Yes / Potential issue: ...
+Notes:
+- ...
 ```
 
-Keep the explanation short. This skill is for polishing sentences, not reviewing the paper.
-
-Do not provide detailed review comments unless the user asks for explanation. Output the polished sentence or passage first.
-
-## Reference Loading
-
-Load only the files needed for the sentence being polished:
-
-- Load `references/dash_policy.md` for hyphenated terms, en-dash relations, compound modifiers, or AI-like invented compounds.
-- Load `references/overclaim_downgrade.md` for strong verbs, intensifiers, novelty claims, broad implications, or scale jumps.
-- Load `references/simple_word_replacement.md` for rare, decorative, inflated, or AI-like vocabulary.
-- Load `references/terminology_definition.md` for central technical terms, manuscript-specific metrics, regimes, abbreviations, or unclear named relations.
-
-Do not load extended corpus notes, examples, or test files unless the user explicitly asks to expand or test the skill.
-
-## Do Not Do
-
-Do not:
-
-- add background information;
-- add transition sentences;
-- add literature comparisons;
-- add broader implications;
-- add novelty claims;
-- add field-scale implications unless already stated;
-- introduce new compound terms;
-- convert plain source wording into a new hyphenated or dash-based label such as `mechanism-aware`, `signal-structure`, `context-sensitive`, or `process-response`;
-- use em dashes for dramatic emphasis;
-- use inflated words such as `revolutionary`, `unprecedented`, `critical`, or `remarkable` unless the evidence explicitly supports them;
-- change `suggests` to `demonstrates`, `indicates` to `proves`, or `may` to an unqualified claim;
-- change `under these conditions` or `in these simulations` into a general statement.
+For larger tasks, lead with the diagnosis and then provide the revised text or plan. Prioritize changes that affect meaning, logic, readability, reproducibility, and reviewer interpretation.
